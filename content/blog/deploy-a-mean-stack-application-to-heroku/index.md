@@ -3,6 +3,8 @@ title: "Deploy a MEAN stack application to Heroku"
 date: "2017-04-09"
 ---
 
+![Heroku + MEAN](./images/heroku_mean-1.jpg)
+
 Last week we discussed [Deploying a NodeJS application to Heroku in 5 minutes](http://wp.me/p7DVqH-8T), the one problem with this tutorial was if your application had a database it wouldn't work. This week I will show you how to Deploy a MEAN stack application that connects out to a hosted Mongo Database. I will not be going into to exactly what each of the commands is doing as I did last week.
 
 ## Project
