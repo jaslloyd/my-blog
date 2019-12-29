@@ -1,9 +1,12 @@
 ---
 title: "Books I have read in 2016"
 date: "2016-12-15"
+description: Reviewing the books I read in 2016 and going though the lessons they taught me.
 ---
 
-Welcome back guys, over the next few weeks/posts I am going to be reviewing my year what went well, what didn't go well and after discussing my plans for 2017. So Why am I doing this? Well, this year I have been a bit obsessed with self-development and improving myself (as you will see from the books I have read). One of the best ways to get s\*\*t done and improve yourself is to keep yourself accountable. I have tried many variations of apps that try to keep you accountable but none seem to work for me so I taught I would give blogging about it a try :). This first post is going to go through the books I have read this year.
+![Stack of Books](./stack_of_books.jpg)
+
+Welcome back, over the next few weeks/posts I am going to be reviewing my year what went well, what didn't go well and after discussing my plans for 2017. So Why am I doing this? Well, this year I have been a bit obsessed with self-development and improving myself (as you will see from the books I have read). One of the best ways to get s\*\*t done and improve yourself is to keep yourself accountable. I have tried many variations of apps that try to keep you accountable but none seem to work for me so I taught I would give blogging about it a try :). This first post is going to go through the books I have read this year.
 
 Being 100% honest I wish I started starting reading earlier in the year. I only started in August as for some reason I then decided to start tracking all my goals and what I wanted to achieve anyway at least I started! Without further delay here is a list of the books I have read in pretty much the order I read them and some lessons they taught me:
 
