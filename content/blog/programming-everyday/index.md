@@ -1,9 +1,10 @@
 ---
 title: "Programming Everyday"
 date: "2016-11-27"
+description: Discussing why you should aim to a bit of programming every day.
 ---
 
-Welcome back to another week on thedeployguy, last week we discussed improving as a programmer and some helpful tips and sites that I use to improve overall as a programmer. This post is sort of an extension of last week post in that we are going to be discussing programming every day and how valuable it is.
+Welcome back, last week we discussed improving as a programmer and some helpful tips and sites that I use to improve overall as a programmer. This post is sort of an extension of last week post in that we are going to be discussing programming every day and how valuable it is.
 
 During my college days, I would have no choice but to be programming every day as we always had projects to do or assignments to complete. As I moved into the work full time it was harder and harder to code every day(outside work) as sometimes I was learning all day in work sometimes coding some days not. By the time I got home the last thing I wanted to do was to go back on my computer and start programming again.
 
