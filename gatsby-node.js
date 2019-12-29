@@ -1,6 +1,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+// This is where the BlogPostTemplate component gets used, it uses the createPath API to create a page in the pages folder.
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
