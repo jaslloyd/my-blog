@@ -4,7 +4,7 @@ date: "2019-11-17"
 description: Second post of a series on Web accessibility where I discuss Aria elements. I give examples of what aria elements are and why we should them.
 ---
 
-![Cover image](./cover_image.png)
+![Cover image](./images/cover_image.png)
 
 Welcome back to the series on Web accessibility, if you haven't read the previous post on [Semantic HTML](https://thedeployguy.com/accessibility-semantic-html/). This week post is about ARIA or WAI-ARIA, which is
 
@@ -41,13 +41,36 @@ I am going to go through some examples in this post most of the common ones you 
 
 The below example uses both a role attribute and aria-label, we use aria-label in this case because a screen reader doesn't know what X means, therefore, using aria-label gives this element more meaning. Role tells the screen reader and this section has a role of Alert so treat this as an alert instead of just a generic group element.
 
-![carbon (1).png](images/carbon-1.png)
+![carbon (1).png](./images/carbon-1.png)
 
-Below is a simplified example from a project I was working on recently, it is a snippet of code that had a title and had a grid of read-only information. Now, a grid is technically a table and we could use an <table> element to display this information. In my case, I needed flexibility in the way the grid was laid out so <table> wasn't really an option. The aria authoring practices do have advice for building a table like component but I want to keep it simple.
+Below is a simplified example from a project I was working on recently, it is a snippet of code that had a title and had a grid of read-only information. Now, a grid is technically a table and we could use an `<table>` element to display this information. In my case, I needed flexibility in the way the grid was laid out so `<table>` wasn't really an option. The aria authoring practices do have advice for building a table like component but I want to keep it simple.
 
 Tangent aside, what aria-labelledby does is, it allows us to associate elements that wouldn't normally have an association. It also us to associate more than one element, so for example when a screen reader comes across "Cell Information 1" it should read "Section Title, Cell Title 1, Cell Information 1" thereby giving the user more information about the element.
 
-![carbon (2)](images/carbon-2.png)
+![carbon (2)](./images/carbon-2.png)
+
+```jsx{4,19}
+function getName(user) {
+  let name = user.name
+  if (name === null) {
+    throw new Error("A girl has no name")
+  }
+  return name
+}
+
+function makeFriends(user1, user2) {
+  user1.friendNames.push(getName(user2))
+  user2.friendNames.push(getName(user1))
+}
+
+const arya = { name: null, friendNames: [] }
+const gendry = { name: "Gendry", friendNames: [] }
+try {
+  makeFriends(arya, gendry)
+} catch (err) {
+  console.log("Oops, that didn't work out: ", err)
+}
+```
 
 #### When do we use aria-labelledby over aria-label?
 
