@@ -10,24 +10,24 @@ Welcome back, over the next few weeks/posts I am going to be reviewing my year w
 
 Being 100% honest I wish I started starting reading earlier in the year. I only started in August as for some reason I then decided to start tracking all my goals and what I wanted to achieve anyway at least I started! Without further delay here is a list of the books I have read in pretty much the order I read them and some lessons they taught me:
 
-**Book:** [Money Master the Game: 7 Simple Steps to Financial Freedom](https://www.amazon.co.uk/gp/product/144238493X/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=144238493X&linkCode=as2&tag=thedeployguy-21)![](http://ir-uk.amazon-adsystem.com/e/ir?t=thedeployguy-21&l=as2&o=2&a=144238493X)
+**Book:** [Money Master the Game: 7 Simple Steps to Financial Freedom](https://www.amazon.co.uk/gp/product/144238493X/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=144238493X&linkCode=as2&tag=thedeployguy-21)![](https://ir-uk.amazon-adsystem.com/e/ir?t=thedeployguy-21&l=as2&o=2&a=144238493X)
 **Lessons**: Start investing now your already starting late, Mutal funds have crazy hidden fees, Index funds FTW
 
-**Book:** [Maximum Achievement: Strategies and Skills That Will Unlock Your Hidden Powers to Succeed](https://www.amazon.co.uk/gp/product/0684803313/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0684803313&linkCode=as2&tag=thedeployguy-21)![](http://ir-uk.amazon-adsystem.com/e/ir?t=thedeployguy-21&l=as2&o=2&a=0684803313)  
+**Book:** [Maximum Achievement: Strategies and Skills That Will Unlock Your Hidden Powers to Succeed](https://www.amazon.co.uk/gp/product/0684803313/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0684803313&linkCode=as2&tag=thedeployguy-21)![](https://ir-uk.amazon-adsystem.com/e/ir?t=thedeployguy-21&l=as2&o=2&a=0684803313)  
 **Lessons:** Always start with end in mind, create small measurable goals and refine them.
 
-**Book:** [The 7 Habits of Highly Effective People](https://www.amazon.co.uk/gp/product/0684858398/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0684858398&linkCode=as2&tag=thedeployguy-21)![](http://ir-uk.amazon-adsystem.com/e/ir?t=thedeployguy-21&l=as2&o=2&a=0684858398) **Lessons:**See above maximum achievement
+**Book:** [The 7 Habits of Highly Effective People](https://www.amazon.co.uk/gp/product/0684858398/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0684858398&linkCode=as2&tag=thedeployguy-21)![](https://ir-uk.amazon-adsystem.com/e/ir?t=thedeployguy-21&l=as2&o=2&a=0684858398) **Lessons:**See above maximum achievement
 
 **Book:** [Tony Robins Awaken the Giant Within](https://www.amazon.co.uk/gp/product/B001EM101Q?ie=UTF8&camp=1634&creativeASIN=B001EM101Q&linkCode=xm2&tag=thedeployguy-21)  
 **Lessons:**Make more decisions to make better decisions, last time your decision was bad? so what try again and try again. Also if you commit to a change really COMMIT!!
 
-**Book:** [The 10X Rule: The Only Difference Between Success and Failure](https://www.amazon.co.uk/gp/product/0470627603/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0470627603&linkCode=as2&tag=thedeployguy-21)![](http://ir-uk.amazon-adsystem.com/e/ir?t=thedeployguy-21&l=as2&o=2&a=0470627603)  
+**Book:** [The 10X Rule: The Only Difference Between Success and Failure](https://www.amazon.co.uk/gp/product/0470627603/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0470627603&linkCode=as2&tag=thedeployguy-21)![](https://ir-uk.amazon-adsystem.com/e/ir?t=thedeployguy-21&l=as2&o=2&a=0470627603)  
 **Lessons:** You like the results your seeing now? Then 10x the effort if you want to 100x the results.
 
 **Book:** [Smarter Faster Better: The Secrets of Being Productive](https://www.amazon.co.uk/gp/product/0434023450/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0434023450&linkCode=as2&tag=thedeployguy-21)![](https://ir-uk.amazon-adsystem.com/e/ir?t=thedeployguy-21&l=as2&o=2&a=0434023450)
 **Lessons:**Nothing I really disliked this book, maybe I need to read it again...
 
-**Book:** [Rich Dad Poor Dad](https://www.amazon.co.uk/gp/product/1612680003/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1612680003&linkCode=as2&tag=thedeployguy-21)![](http://ir-uk.amazon-adsystem.com/e/ir?t=thedeployguy-21&l=as2&o=2&a=1612680003)  
+**Book:** [Rich Dad Poor Dad](https://www.amazon.co.uk/gp/product/1612680003/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=1612680003&linkCode=as2&tag=thedeployguy-21)![](https://ir-uk.amazon-adsystem.com/e/ir?t=thedeployguy-21&l=as2&o=2&a=1612680003)  
 **Lessons:** You think owning your own home is an asset? well, read this book then rethink...
 
 **Book:** [The Millionaire Teacher](https://www.amazon.co.uk/gp/product/0470830069/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0470830069&linkCode=as2&tag=thedeployguy-21)![](https://ir-uk.amazon-adsystem.com/e/ir?t=thedeployguy-21&l=as2&o=2&a=0470830069)  
