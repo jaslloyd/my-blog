@@ -49,29 +49,6 @@ Tangent aside, what aria-labelledby does is, it allows us to associate elementsÂ
 
 ![carbon (2)](./images/carbon-2.png)
 
-```jsx{4,19}
-function getName(user) {
-  let name = user.name
-  if (name === null) {
-    throw new Error("A girl has no name")
-  }
-  return name
-}
-
-function makeFriends(user1, user2) {
-  user1.friendNames.push(getName(user2))
-  user2.friendNames.push(getName(user1))
-}
-
-const arya = { name: null, friendNames: [] }
-const gendry = { name: "Gendry", friendNames: [] }
-try {
-  makeFriends(arya, gendry)
-} catch (err) {
-  console.log("Oops, that didn't work out: ", err)
-}
-```
-
 #### When do we use aria-labelledby over aria-label?
 
 > You should use aria-labelledby if the text is visually on-screen somewhere and this form is preferable. You should only use aria-label when itâ€™s not possible to have the label visible on screen. - [Source](https://www.symphonious.net/2010/12/07/aria-labelledby-vs-aria-label/)
