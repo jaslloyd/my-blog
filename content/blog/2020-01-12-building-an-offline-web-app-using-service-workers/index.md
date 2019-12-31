@@ -21,7 +21,7 @@ As you can see it is very simple, you have an input where you can type what you 
 ## **Requirements**
 
 1. Install the latest Node LTS version [here](https://nodejs.org/en/)
-2. Download the starter template here. \[insert link\]
+2. Download the starter template [here](https://github.com/jaslloyd/til/tree/tutorial-start)
 3. Open the repo in your favourite code editor (I will be using vscode)
 4. Open the terminal and run _npm install_
 5. In the terminal then run _npm start_ and you should see the start template application running in your browser.
@@ -137,7 +137,9 @@ As you can see our application works offline! and the assets are still being ser
 
 ## Conclusion
 
-I hope you enjoyed this post on an Introduction to Service Workers by Building a simple TIL application that works offline. I introduced you to installing a service worker, listening to events then I showed you how to cache the app shell, discussed versioning and cleaning up your cache then finish the post by having a fully working offline application. Now as I stated this is only an introduction, I haven't dug deeper into dynamic caching and integrating this with a backend. I will write follow up posts diving deeper into service workers when I do write them I will be sure to link them here.
+I hope you enjoyed this post on an Introduction to Service Workers by Building a simple TIL application that works offline. I introduced you to installing a service worker, listening to events then I showed you how to cache the app shell, discussed versioning and cleaning up your cache then finish the post by having a fully working offline application. The finished application / code can be found [here](https://github.com/jaslloyd/til)
+
+As I stated this is only an introduction, I haven't dug deeper into dynamic caching and integrating this with a backend. I will write follow up posts diving deeper into service workers when I do write them I will be sure to link them here.
 
 Until next time,
 
