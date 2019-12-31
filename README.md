@@ -66,6 +66,7 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 ## Resources I found
 
 [Netlify Redirects](https://play.netlify.com/redirects)
+
 [Static Folder (Redirects Related)](https://www.gatsbyjs.org/docs/static-folder)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
