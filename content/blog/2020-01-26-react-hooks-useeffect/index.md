@@ -43,6 +43,8 @@ function TitleUpdate() {
 }
 ```
 
+![Window Change Example](./images/hooks_window_change.gif)
+
 ### Fetching Data
 
 Making a network request (note: Hooks are not the final solution to making network requests in React, Suspense is coming for that).
@@ -105,6 +107,8 @@ function TodosApp() {
   )
 }
 ```
+
+![Fetch Example](./images/network_fetch.gif)
 
 ## Effects with Cleanup
 
