@@ -3,6 +3,7 @@ Welcome back, today I am going to be discussing Gatsby and specifically how to c
 ## What is Gatsby
 
 //TODO: Fill out this section
+Gatsby is a static site generator
 
 ## Requirements
 
@@ -14,15 +15,15 @@ Welcome back, today I am going to be discussing Gatsby and specifically how to c
 
 ## Gatsby concepts
 
-Let's dive into the directory structure and how it works in Gatsby
+Let's dive into the directory structure
 
 ```
 ├── src
 ├──── pages
-├───── 404.js -> This is the file that will be served when a 404 hits.
+├───── 404.js
 ├───── index.js -> This is the entry file into our app.
 ├──── components -> This is where the components that build up our pages go.
-├───── layout.js -> Layout components are for sections of a site that you want to share across multiple pages. (Header, Footer, Sidebar, Nav menu etc...)
+├───── layout.js ->
 ├──── utils
 ├───── global.css -> Commonly a place for global styles
 ├── gatsby-browser.js -> This is a file used by Gatsby, commonly styles(global.css) and Typography are imported here.
@@ -32,7 +33,20 @@ Let's dive into the directory structure and how it works in Gatsby
 
 ```
 
-`src/pages/*.js` Any React component defined in here will automatically become a page. e.g `src/pages/about.js` will map to `/about`.
+```
+`src/`
+    - `pages/*.js` -  Any React component defined in here will automatically become a page. e.g `src/pages/about.js` will map to `/about`.
+        - 404.js -  This is the file that will be served when a 404 hits.
+        - index.js -  This is the homepage of the app e.g '/'
+    - `components` -  This is where the components that build up our pages go.
+        - `layout.js` - Layout components are for sections of a site that you want to share across multiple pages. (Header, Footer, Sidebar, Nav menu etc...)
+    - utils
+        - global.css - Commonly a place for global styles
+`gatsby-browser.js` - This is a file used by Gatsby, commonly styles(global.css) and Typography are imported here.
+`gatsby-config.js` - This is used for Metadata and for plugins
+`gatsby-node.js` - [tba]
+`gatsby-ssr.js` - [tba]
+```
 
 ### Data in Gatsby
 
