@@ -4,7 +4,7 @@ Welcome back, today I am going to be discussing Gatsby and specifically how to c
 
 > Gatsby is a blazing fast modern site generator for React.
 
-Site generator means it will generate a website bundle that you can deploy to any service that supports static hosting e.g Zeit Now, Netlify, Github Pages etc.
+Site generator means it will generate a website bundle that you can deploy to any service that supports static hosting e.g Zeit Now, Netlify, GitHub Pages etc.
 
 One very important note about Gatsby pages are created at build time not at run time or when the user requests them like PHP or other service side frameworks. Gatsby does have some support for part of server-side rendering but I won't be diving into that. A lot of the power of Gatsby comes from this build time creation.
 
@@ -38,10 +38,10 @@ Let's dive into the directory structure
 ```
 
 1.  **`/src/*.js`**: Any React component defined in here will automatically become a page. e.g `src/pages/about.js` will map to `/about`. index.js will be the homepage
-    - **``src/components**``: This is where the components that build up our pages go
-      - **`layout.js`**``: Layout components are for sections of a site that you want to share across multiple pages. (Header, Footer, Sidebar, Nav menu etc...)
+    - **`src/components`**: This is where the components that build up our pages go
+      - **`layout.js`**: Layout components are for sections of a site that you want to share across multiple pages. (Header, Footer, Sidebar, Nav menu etc...)
     - **`utils`** -
-      - **`global.css**` - Commonly a place for global styles
+      - **`global.css`** - Commonly a place for global styles
 2.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
 3.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
@@ -140,7 +140,7 @@ Variables can be added to page queries but not static queries.
 
 ## Conclusion
 
-That is it for the first post about migrating Wordpress to Gatsby, this was an introduction to Gatsby I know there wasn't much migrating happening in this post but getting a grasp on Gatsby concepts will save you a lot of headache later. Understanding the power it gives you and its limitations is very important. We now have a template blog in which we can use and customize in the future, we will also work on import data from Wordpress later but this is a good starting point on our migration.
+That is it for the first post about migrating WordPress to Gatsby, this was an introduction to Gatsby I know there wasn't much migrating happening in this post but getting a grasp on Gatsby concepts will save you a lot of headaches later. Understanding the power it gives you and its limitations are very important. We now have a template blog in which we can use and customize in the future, we will also work on import data from WordPress later but this is a good starting point on our migration.
 
 Until next time,
 
