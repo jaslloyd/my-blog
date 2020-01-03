@@ -6,11 +6,11 @@ Welcome back, today I am going to be discussing Gatsby and specifically how to c
 
 ## Requirements
 
-Install the latest Node LTS version here , (we need npm)
-Install the Gatsby CLI tool via `npm install -g gatsby-cli`
-Create a new Gatsby project using the blog starter as a template: `gatsby new my-blog https://github.com/gatsbyjs/gatsby-starter-blog`
-Go to the directory `cd my-blog`
-Boot up the live server via `npm start`
+1. Install the latest Node LTS version here , (we need npm)
+2. Install the Gatsby CLI tool via `npm install -g gatsby-cli`
+3. Create a new Gatsby project using the blog starter as a template: `gatsby new my-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+4. Go to the directory `cd my-blog`
+5. Boot up the live server via `npm start`
 
 ## Gatsby concepts
 
@@ -36,21 +36,12 @@ Let's dive into the directory structure and how it works in Gatsby
 
 ### Data in Gatsby
 
-Data in Gatsby can be considered “everything that lives outside a React component”.
-
-Data can also live in file types like Markdown, CSV, etc. as well as databases and APIs of all sorts.
-
-Gatsby’s data layer lets you pull data from these (and any other source) directly into your components—in the shape and form you want.
+Data in Gatsby can be considered “everything that lives outside a React component”. Data can also live in file types like Markdown, CSV, etc. as well as databases and APIs of all sorts. Gatsby’s data layer lets you pull data from these (and any other source) directly into your components—in the shape and form you want.
 
 There are mainly two ways to pull data into Gatsby:
 
 - createPages API to pull unstructured data into Gatsby pages directly
 - GraphQL
-
-Places for Data
-`gatsby-config.js`
-
-- `siteMetadata` - This is a place for these common bits of data (siteTitle, decryptions etc)
 
 #### How to Pull Data into Pages / Components
 
