@@ -136,6 +136,9 @@ _Note_: StaticQuery / useStaticQuery doesn't accept variables.
 
 Variables can be added to page queries but not static queries.
 
+### How pages/posts are created in Gatsby
+
+// Markdown -> Html
 // CreatePage API details....
 
 ## Conclusion
