@@ -61,9 +61,9 @@ There are mainly two ways to pull data into Gatsby:
 
 #### How to Pull Data into Pages / Components
 
-There are a few ways to pull data from a variety of sources into your pages / components:
+There are a few ways to pull data from a variety of sources into your pages/components:
 
-- page query - You might have an about page which exports a pageQuery that is a graphql quering for some data e.g:
+- page query - You might have an about page which exports a pageQuery that is a GraphQL querying for some data e.g:
 
   ```js
   // Header.js
@@ -80,7 +80,7 @@ There are a few ways to pull data from a variety of sources into your pages / co
   `
   ```
 
-  At build time, Gatsby will look through your pages / components and see if it finds an exported graphql string. When it finds it, it will run it and provide the data to the component via Props on the data property. So for the above example Query, it looks at the siteMetadata in gatsby-config.js and takes the title and inject it into the about.js component via data object. (The nice thing is how you access the data is mirrored the way your query looks e.g: `data.site.siteMetadata.title`)
+  At build time, Gatsby will look through your pages/components and see if it finds an exported GraphQL string. When it finds it, it will run it and provide the data to the component via Props on the data property. So for the above example Query, it looks at the `siteMetadata` in gatsby-config.js and takes the title and inject it into the about.js component via data object. (The nice thing is how you access the data is mirrored the way your query looks e.g: `data.site.siteMetadata.title`)
 
   _Note: You can only have one page query per file_
 
