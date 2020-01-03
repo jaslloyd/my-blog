@@ -10,6 +10,7 @@ module.exports = {
   },
   plugins: [
     {
+      // Allows us to source files from the file system.
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -24,6 +25,7 @@ module.exports = {
       },
     },
     {
+      // You’ll use this to recognize files which are Markdown and read their content. The plugin will convert the frontmatter metadata part of your Markdown files as frontmatter and the content part as HTML.
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -74,5 +76,8 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
   ],
 }
