@@ -2,8 +2,11 @@ Welcome back, today I am going to be discussing Gatsby and specifically how to c
 
 ## What is Gatsby
 
-//TODO: Fill out this section
-Gatsby is a static site generator
+> Gatsby is a blazing fast modern site generator for React.
+
+Site generator means it will generate a website bundle that you can deploy to any service that supports static hosting e.g Zeit Now, Netlify, Github Pages etc.
+
+One very important note about Gatsby pages are created at build time not at run time or when the user requests them like PHP or other service side frameworks. Gatsby does have some support for part of server-side rendering but I won't be diving into that. A lot of the power of Gatsby comes from this build time creation.
 
 ## Requirements
 
@@ -21,13 +24,13 @@ Let's dive into the directory structure
 ├── src
 ├──── pages
 ├───── 404.js
-├───── index.js -> This is the entry file into our app.
-├──── components -> This is where the components that build up our pages go.
-├───── layout.js ->
+├───── index.js
+├──── components
+├───── layout.js
 ├──── utils
-├───── global.css -> Commonly a place for global styles
-├── gatsby-browser.js -> This is a file used by Gatsby, commonly styles(global.css) and Typography are imported here.
-├── gatsby-config.js -> This is used for Metadata and for plugins
+├───── global.css
+├── gatsby-browser.js
+├── gatsby-config.js
 ├── gatsby-node.js
 ├── gatsby-ssr.js
 ```
@@ -61,7 +64,8 @@ There are a few ways to pull data from a variety of sources into your pages / co
 - page query - You might have an about page which exports a pageQuery that is a graphql quering for some data e.g:
 
   ```js
-  // About.js
+  // Header.js
+  const Header = ({ data }) => <h1>Site: {data.site.siteMetadata.title}</h1>
   // ....
   export const query = graphql`
     query {
