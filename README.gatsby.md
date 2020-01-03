@@ -1,16 +1,18 @@
 Welcome back, today I am going to be discussing Gatsby and specifically how to create a Gatsby blog. I am going to be migrating this blog from WordPress to Gatsby in the near future so I taught it would be good to document the process.
 
-What is Gatsby
+## What is Gatsby
 
 //TODO: Fill out this section
 
-Requirements
+## Requirements
+
 Install the latest Node LTS version here , (we need npm)
 Install the Gatsby CLI tool via `npm install -g gatsby-cli`
 Create a new Gatsby project using the blog starter as a template: `gatsby new my-blog https://github.com/gatsbyjs/gatsby-starter-blog`
 Go to the directory `cd my-blog`
 Boot up the live server via `npm start`
-Gatsby concepts
+
+## Gatsby concepts
 
 Let's dive into the directory structure and how it works in Gatsby
 
@@ -21,7 +23,7 @@ Let's dive into the directory structure and how it works in Gatsby
 ├───── index.js -> This is the entry file into our app.
 ├──── components -> This is where the components that build up our pages go.
 ├───── layout.js -> Layout components are for sections of a site that you want to share across multiple pages. (Header, Footer, Sidebar, Nav menu etc...)
-├──── styles
+├──── utils
 ├───── global.css -> Commonly a place for global styles
 ├── gatsby-browser.js -> This is a file used by Gatsby, commonly styles(global.css) and Typography are imported here.
 ├── gatsby-config.js -> This is used for Metadata and for plugins
@@ -32,7 +34,7 @@ Let's dive into the directory structure and how it works in Gatsby
 
 `src/pages/*.js` Any React component defined in here will automatically become a page. e.g `src/pages/about.js` will map to `/about`.
 
-// Pages, CSS, GraphQL for dynamic content.
+### Data in Gatsby
 
 Data in Gatsby can be considered “everything that lives outside a React component”.
 
@@ -50,7 +52,7 @@ Places for Data
 
 - `siteMetadata` - This is a place for these common bits of data (siteTitle, decryptions etc)
 
-How to Pull Data into Pages / Components
+#### How to Pull Data into Pages / Components
 
 There are a few ways to pull data from a variety of sources into your pages / components:
 
@@ -70,7 +72,7 @@ There are a few ways to pull data from a variety of sources into your pages / co
   `
   ```
 
-  At build time, Gatsby will look through your pages / components and see if it finds an exported graphql string. When it finds it, it will run it and provide the data to the component via Props on the data property.
+  At build time, Gatsby will look through your pages / components and see if it finds an exported graphql string. When it finds it, it will run it and provide the data to the component via Props on the data property. So for the above example Query, it looks at the siteMetadata in gatsby-config.js and takes the title and inject it into the about.js component via data object. (The nice thing is how you access the data is mirrored the way your query looks e.g: `data.site.siteMetadata.title`)
 
   _Note: You can only have one page query per file_
 
@@ -128,6 +130,10 @@ Variables can be added to page queries but not static queries.
 
 // CreatePage API details....
 
-Conclusion
+## Conclusion
 
-https://egghead.io/lessons/gatsby-add-a-list-of-posts-to-a-gatsby-blog-with-a-graphql-page-query
+That is it for the first post about migrating Wordpress to Gatsby, this was an introduction to Gatsby I know there wasn't much migrating happening in this post but getting a grasp on Gatsby concepts will save you a lot of headache later. Understanding the power it gives you and its limitations is very important. We now have a template blog in which we can use and customize in the future, we will also work on import data from Wordpress later but this is a good starting point on our migration.
+
+Until next time,
+
+Jason
