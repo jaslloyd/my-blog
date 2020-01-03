@@ -30,23 +30,20 @@ Let's dive into the directory structure
 ├── gatsby-config.js -> This is used for Metadata and for plugins
 ├── gatsby-node.js
 ├── gatsby-ssr.js
-
 ```
 
-```
-`src/`
-    - `pages/*.js` -  Any React component defined in here will automatically become a page. e.g `src/pages/about.js` will map to `/about`.
-        - 404.js -  This is the file that will be served when a 404 hits.
-        - index.js -  This is the homepage of the app e.g '/'
-    - `components` -  This is where the components that build up our pages go.
-        - `layout.js` - Layout components are for sections of a site that you want to share across multiple pages. (Header, Footer, Sidebar, Nav menu etc...)
-    - utils
-        - global.css - Commonly a place for global styles
-`gatsby-browser.js` - This is a file used by Gatsby, commonly styles(global.css) and Typography are imported here.
-`gatsby-config.js` - This is used for Metadata and for plugins
-`gatsby-node.js` - [tba]
-`gatsby-ssr.js` - [tba]
-```
+1.  **`/src/*.js`**: Any React component defined in here will automatically become a page. e.g `src/pages/about.js` will map to `/about`. index.js will be the homepage
+    - **``src/components**``: This is where the components that build up our pages go
+      - **`layout.js`**``: Layout components are for sections of a site that you want to share across multiple pages. (Header, Footer, Sidebar, Nav menu etc...)
+    - **`utils`** -
+      - **`global.css**` - Commonly a place for global styles
+2.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+
+3.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+
+4.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+
+5.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
 ### Data in Gatsby
 
