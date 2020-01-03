@@ -8,9 +8,11 @@ Site generator means it will generate a website bundle that you can deploy to an
 
 One very important note about Gatsby pages are created at build time not at run time or when the user requests them like PHP or other service side frameworks. Gatsby does have some support for part of server-side rendering but I won't be diving into that. A lot of the power of Gatsby comes from this build time creation.
 
+Gatsby has an extensive set of plugins [available](https://www.gatsbyjs.org/plugins/) as well as [starter templates](https://www.gatsbyjs.org/starters/?v=2) which can help speed up your website development.
+
 ## Requirements
 
-1. Install the latest Node LTS version here , (we need npm)
+1. Install the latest Node LTS version [here](https://nodejs.org/en/)
 2. Install the Gatsby CLI tool via `npm install -g gatsby-cli`
 3. Create a new Gatsby project using the blog starter as a template: `gatsby new my-blog https://github.com/gatsbyjs/gatsby-starter-blog`
 4. Go to the directory `cd my-blog`
