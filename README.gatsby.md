@@ -138,15 +138,13 @@ Variables can be added to page queries but not static queries.
 
 ### How pages/posts are created in Gatsby
 
-How pages/posts are created in Gatsby
+I have already discussed one way to create pages in Gatsby and that was placing JavaScript files inside the pages directory. That is great for mostly static pages but for something like blog posts where the content is a bit more structured and freeform we need something different.
 
-I have already discussed one way to create pages in Gatsby and that was just placing JavaScript files inside the pages directory. That is great for mostly static pages but for something like blog posts where the content is a bit more structured.
-
-You could write your blog posts in HTML but can turn into a nightmare very quickly,  another way you could write blog posts is using Markdown. Since most likely you are a developer you should be familiar enough with Markdown. Markdown will give us a format to write our blog posts in and from the markdown we can use Gatsby plugins to transform it into structured HTML content and have the HTML version of the blog posts but automatically put into the pages directory at build time. Therefore the only things you need to worry about is writing your blog posts.
+You could write your blog posts in HTML but can turn into a nightmare very quickly (making sure you use the right tags, formatting etc), another way you could write them is using Markdown. Markdown will give us a format to write our blog posts in and from the markdown we can use Gatsby plugins to transform it into structured HTML content. Gatsby plugin will also take care of putting the HTML version in the right place, That means the only things you need to worry about is writing your blog posts.
 
 #### Markdown to HTML
 
-As I said we can use plugins to convert Markdown to HTML that was we do not have to worry about what tags to use or really how to format much of the content. We can just focus on writing. Good news is the starter template we used comes with all this built-in! but let's run through how this will work in Gatsby:
+As I said we can use plugins to convert Markdown to HTML. We can just focus on writing. Good news is the starter template we used comes with all this built-in! but let's run through how this will work in Gatsby:
 
 1. Posts are created in `/content/blog` in markdown. e.g `/content/blog/2020-01-01-new-year-new-me/index.md`. (It is required/advised to have posts in a folder, the name doesn't matter but having them like I have means they are automatically ordered by date)
 
