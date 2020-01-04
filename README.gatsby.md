@@ -138,8 +138,39 @@ Variables can be added to page queries but not static queries.
 
 ### How pages/posts are created in Gatsby
 
-// Markdown -> Html
-// CreatePage API details....
+How pages/posts are created in Gatsby
+
+I have already discussed one way to create pages in Gatsby and that was just placing JavaScript files inside the pages directory. That is great for mostly static pages but for something like blog posts where the content is a bit more structured.
+
+You could write your blog posts in HTML but can turn into a nightmare very quickly,  another way you could write blog posts is using Markdown. Since most likely you are a developer you should be familiar enough with Markdown. Markdown will give us a format to write our blog posts in and from the markdown we can use Gatsby plugins to transform it into structured HTML content and have the HTML version of the blog posts but automatically put into the pages directory at build time. Therefore the only things you need to worry about is writing your blog posts.
+
+#### Markdown to HTML
+
+As I said we can use plugins to convert Markdown to HTML that was we do not have to worry about what tags to use or really how to format much of the content. We can just focus on writing. Good news is the starter template we used comes with all this built-in! but let's run through how this will work in Gatsby:
+
+1. Posts are created in `/content/blog` in markdown. e.g `/content/blog/2020-01-01-new-year-new-me/index.md`. (It is required/advised to have posts in a folder, the name doesn't matter but having them like I have means they are automatically ordered by date)
+
+2. During Build time, Gatsby calls `createPages` in `gatsby-node.js`, which will:
+
+   1. Use GraphQL to query for all the markdown files via allMarkdownRemark. This is provided by gatsby-transformer-remark which allows you to query for markdown files, it also converts the pages into HTML.
+   2. It then goes through each of the posts it found and uses the createPage API (which is provided by Gatsby) to create a page with the post details.
+
+3. Since the pages are created during build time newly created pages are put directly into the public folder along with the rest of your app. This means you do not have a copy in /pages you only need to care and update files in the `content/blog` folder.
+
+4. Posts can now be viewed within your website.
+
+If you are wondering how the title of a post gets set or the date, well if you look at the same post provided in the Gatsby starter template, all the files start with something like this:
+
+```
+---
+title: "My First Post"
+date: "2019-08-01"
+---
+```
+
+This is called FrontMatter and is basically metadata for your posts, you can put whatever properties you want here and you will be able to query them in your script files.
+
+I hope this gives you a better understanding of how pages go from Markdown to HTML since this is all provided by the template you will really never have to change this behaviour. I wanted to go through it as you may want to customize certain things down the line.
 
 ## Conclusion
 
