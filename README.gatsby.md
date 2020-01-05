@@ -132,9 +132,7 @@ There are a few ways to pull data from a variety of sources into your pages/comp
   }
   ```
 
-_Note_: StaticQuery / useStaticQuery doesn't accept variables.
-
-Variables can be added to page queries but not static queries.
+**Note**: StaticQuery / useStaticQuery doesn't accept variables whereas page queries can.
 
 ### How pages/posts are created in Gatsby
 
