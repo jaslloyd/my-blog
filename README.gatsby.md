@@ -1,4 +1,4 @@
-Welcome back, today I am going to be discussing Gatsby and specifically how to create a Gatsby blog. I am going to be migrating this blog from WordPress to Gatsby in the near future so I taught it would be good to document the process.
+Welcome back, today I am going to starting a new series on migrating a WordPress Site/Blog to Gatsby. I am in process of migrating this blog to Gatsby so I taught it would be good to document the process. Today I am going be discussing Gatsby and specifically how to create a starter blog up and running so we have something to start migrating to.
 
 ## What is Gatsby
 
@@ -82,7 +82,7 @@ There are a few ways to pull data from a variety of sources into your pages/comp
 
   At build time, Gatsby will look through your pages/components and see if it finds an exported GraphQL string. When it finds it, it will run it and provide the data to the component via Props on the data property. So for the above example Query, it looks at the `siteMetadata` in gatsby-config.js and takes the title and inject it into the about.js component via data object. (The nice thing is how you access the data is mirrored the way your query looks e.g: `data.site.siteMetadata.title`)
 
-  _Note: You can only have one page query per file_
+  **Note**: You can only have one page query per file
 
 - StaticQuery - which a component that takes a query as an argument and provides the data via a render prop.
 
