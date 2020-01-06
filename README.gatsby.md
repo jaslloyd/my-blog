@@ -1,4 +1,4 @@
-Welcome back, today I am going to starting a new series on migrating a WordPress Site/Blog to Gatsby. I am in process of migrating this blog to Gatsby so I taught it would be good to document the process. Today I am going be discussing Gatsby and specifically how to create a starter blog up and running so we have something to start migrating to.
+Welcome back, today I am going to starting a new series on migrating a WordPress Site/Blog to Gatsby. I am in the process of migrating this blog to Gatsby so I taught it would be good to document the process. Today I am going be discussing Gatsby and specifically how to create a starter blog up and running so we have something to start migrating to.
 
 ## What is Gatsby
 
@@ -109,7 +109,7 @@ There are a few ways to pull data from a variety of sources into your pages/comp
   )
   ```
 
-- useStaticQuery Hooks - which is exact same as StaticQuery above but it provides you the data directly to use inside your function components.
+- useStaticQuery Hooks - which is exactly the same as StaticQuery above but it provides you the data directly to use inside your function components.
 
   ```jsx
   import React from "react"
