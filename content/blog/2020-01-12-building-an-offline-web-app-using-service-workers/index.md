@@ -1,7 +1,7 @@
 ---
 title: "Building an offline web app using Service Workers"
 date: "2020-01-12"
-description: "In this introductory post to Service Worker we will be  Building an offline web app called TIL. I discuss installing a service workers, caching assets, serving cached assets and making it work offline."
+description: "In this introductory post to Service Worker we will be  Building an offline web app called TIL. Discussing installing service workers, caching assets, serving cached assets and making it work offline."
 ---
 
 ![Cover Image](./images/cover_image.jpeg)
