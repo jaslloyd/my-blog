@@ -1,6 +1,7 @@
 ---
 title: "React Hooks: useState"
 date: "2020-01-19"
+description: "The first post in a new series on React Hooks, this post discusses what are hooks, the rules and finally I discuss useState."
 ---
 
 ![Cover Image](./images/Dark-LinkedIn-Post-Header.png)
