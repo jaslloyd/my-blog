@@ -1,6 +1,7 @@
 ---
 title: "React Hooks: useEffect"
 date: "2020-01-26"
+description: "The second post in a new series on React Hooks, this post discusses the useEffect hook."
 ---
 
 ![Cover Image](./images/cover_image.png)
