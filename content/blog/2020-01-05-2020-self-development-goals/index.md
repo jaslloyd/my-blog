@@ -2,6 +2,7 @@
 title: "2020: Self Development Goals"
 date: "2020-01-05"
 coverImage: "Brown-New-Year-Card.png"
+description: "Discussing my short-term Self Development Goals for 2020."
 ---
 
 ![Cover Image](./images/Brown-New-Year-Card.png)
