@@ -84,6 +84,7 @@ function MainRender() {
           {cartValue => (
             <main className={value}>
               <h1>Current theme value: {value}</h1>
+              <p>Cart is currently: {cartDetails.isCartOpen}</p>
             </main>
           )}
         </CartContext.Consumer>
@@ -95,9 +96,36 @@ function MainRender() {
 
 This is where useContext shines:
 
-// TODO: Multiple Context with useContext example.
-
 ```jsx
+const themeDetails = "light"
+const cartDetails = {
+  isCartOpen: false,
+  cartTotal: 0,
+}
+const ThemeContext = React.createContext(themeDetails)
+const CartContext = React.createContext(cartDetails)
+
+function App() {
+  return (
+    <ThemeContext.Provider value={themeDetails}>
+      <CartContext.Provider value={cartDetails}>
+        <Main />
+      </CartContext.Provider>
+    </ThemeContext.Provider>
+  )
+}
+
+function MainHooks() {
+  const theme = React.useContext(ThemeContext)
+  const cartDetails = React.useContext(CartContext)
+
+  return (
+    <main className={theme}>
+      <h1>Current theme value: {theme}</h1>
+      <p>Cart is currently: {cartDetails.isCartOpen}</p>
+    </main>
+  )
+}
 ```
 
 If you are looking for a more detailed example you can find one [here](https://reactjs.org/docs/hooks-reference.html#usecontext).
