@@ -17,12 +17,87 @@ useContext Summary
 
 // TODO: Insert Hooks example
 
+```jsx
+
+const themeDetails = 'light';
+const ThemeContext = React.createContext(themeDetails);
+
+function App() {
+  return (
+    <ThemeContext.Provider value={themeDetails}>
+      <Main />
+    </ThemeContext.Provider>
+  );
+}
+
+function MainRender() {
+    return (
+        <MyContext.Consumer>
+            {value => (
+                <main className={value}>
+                   <h1>Current theme value: {value}</h1>
+                </main>
+            )}
+        </MyContext.Consumer>
+    )
+}
+// useContext
+function Main() {
+  const theme = useContext(ThemeContext);
+
+  return (
+    <main className={theme}>
+        <h1>Current theme value: {theme}</h1>
+    </main>
+  );
+
+```
+
 While this doesn't seem to bad it starts getting crazy when you have to consume multiple contexts. Each context means wrapping in another context consumer that will expose the values with a render prop as you have more and more of this things start to snowball:
 
 // TODO: Multiple Context example
 
+```jsx
+const themeDetails = "light"
+const cartDetails = {
+  isCartOpen: false,
+  cartTotal: 0,
+}
+const ThemeContext = React.createContext(themeDetails)
+const CartContext = React.createContext(cartDetails)
+
+function App() {
+  return (
+    <ThemeContext.Provider value={themeDetails}>
+      <CartContext.Provider value={cartDetails}>
+        <Main />
+      </CartContext.Provider>
+    </ThemeContext.Provider>
+  )
+}
+
+function MainRender() {
+  return (
+    <MyContext.Consumer>
+      {value => (
+        <CartContext.Consumer>
+          {cartValue => (
+            <main className={value}>
+              <h1>Current theme value: {value}</h1>
+            </main>
+          )}
+        </CartContext.Consumer>
+      )}
+    </MyContext.Consumer>
+  )
+}
+```
+
 This is where useContext shines:
 
 // TODO: Multiple Context with useContext example.
+
+```jsx
+```
 
 If you are looking for a more detailed example you can find one [here](https://reactjs.org/docs/hooks-reference.html#usecontext).
