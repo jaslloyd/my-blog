@@ -15,6 +15,8 @@ useContext Summary
 - Context can be optimized using memoization
 - useContext only lets you read the context and subscribe to its change
 
+Before we had useContext we used render props to access the context values, the useContext hook allows use to use a context value without using render props. See example below:
+
 ```jsx
 
 const themeDetails = 'light';
