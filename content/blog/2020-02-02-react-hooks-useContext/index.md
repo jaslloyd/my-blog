@@ -70,7 +70,7 @@ function App() {
   return (
     <ThemeContext.Provider value={themeDetails}>
       <CartContext.Provider value={cartDetails}>
-        <Main />
+        <MainRender />
       </CartContext.Provider>
     </ThemeContext.Provider>
   )
@@ -78,18 +78,21 @@ function App() {
 
 function MainRender() {
   return (
-    <MyContext.Consumer>
-      {value => (
+    <ThemeContext.Consumer>
+      {themeValue => (
         <CartContext.Consumer>
           {cartValue => (
-            <main className={value}>
-              <h1>Current theme value: {value}</h1>
-              <p>Cart is currently: {cartDetails.isCartOpen}</p>
+            <main className={themeValue}>
+              <h1>Consuming Context: No Hooks</h1>
+              <h2>Current theme value: {themeValue}</h2>
+              <p>
+                Cart is currently: {cartValue.isCartOpen ? "Open" : "Closed"}
+              </p>
             </main>
           )}
         </CartContext.Consumer>
       )}
-    </MyContext.Consumer>
+    </ThemeContext.Consumer>
   )
 }
 ```
@@ -97,32 +100,17 @@ function MainRender() {
 This is where useContext shines:
 
 ```jsx
-const themeDetails = "light"
-const cartDetails = {
-  isCartOpen: false,
-  cartTotal: 0,
-}
-const ThemeContext = React.createContext(themeDetails)
-const CartContext = React.createContext(cartDetails)
-
-function App() {
-  return (
-    <ThemeContext.Provider value={themeDetails}>
-      <CartContext.Provider value={cartDetails}>
-        <Main />
-      </CartContext.Provider>
-    </ThemeContext.Provider>
-  )
-}
+// The same code is needed for the provider but now when consuming a context
 
 function MainHooks() {
   const theme = React.useContext(ThemeContext)
-  const cartDetails = React.useContext(CartContext)
+  const cartValue = React.useContext(CartContext)
 
   return (
     <main className={theme}>
-      <h1>Current theme value: {theme}</h1>
-      <p>Cart is currently: {cartDetails.isCartOpen}</p>
+      <h1>Consuming Context: Hooks Version</h1>
+      <h2>Current theme value: {theme}</h2>
+      <p>Cart is currently: {cartValue.isCartOpen ? "Open" : "Closed"}</p>
     </main>
   )
 }
