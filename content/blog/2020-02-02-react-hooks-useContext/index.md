@@ -15,8 +15,6 @@ useContext Summary
 - Context can be optimized using memoization
 - useContext only lets you read the context and subscribe to its change
 
-// TODO: Insert Hooks example
-
 ```jsx
 
 const themeDetails = 'light';
@@ -54,8 +52,6 @@ function Main() {
 ```
 
 While this doesn't seem to bad it starts getting crazy when you have to consume multiple contexts. Each context means wrapping in another context consumer that will expose the values with a render prop as you have more and more of this things start to snowball:
-
-// TODO: Multiple Context example
 
 ```jsx
 const themeDetails = "light"
@@ -100,7 +96,7 @@ function MainRender() {
 This is where useContext shines:
 
 ```jsx
-// The same code is needed for the provider but now when consuming a context
+// The same code is needed for the provider but now when consuming contexts
 
 function MainHooks() {
   const theme = React.useContext(ThemeContext)
@@ -117,3 +113,7 @@ function MainHooks() {
 ```
 
 If you are looking for a more detailed example you can find one [here](https://reactjs.org/docs/hooks-reference.html#usecontext).
+
+## Conclusion
+
+I hope you enjoyed this third post in the react hooks series, this week we discussed useContext. We have now covered the basic hooks, useState, useEffect and useContext. Join me next week when I will be discussing [tba]
