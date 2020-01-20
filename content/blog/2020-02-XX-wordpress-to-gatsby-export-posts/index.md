@@ -27,9 +27,21 @@ Depending on how many posts you have this may take an extra couple of seconds bu
 We are going to use the file we generated in the last step along with a tool called wordpress-export-to-markdown to transform this file into Markdown files. In order to use the tool we are going to need to install `npx/npm`. If you have ever installed node.js you npm will come with it, if not google `install nodejs` I won't go through this as I want to keep the tutorial focused. Lets start:
 
 1. Open a terminal navigate to where you have blog backup file downloaded. In my case it is `Downloads`.
-2. Run `npx wordpress-export-to-markdown --prefixdate=true --input=thedeployguy.WordPress.2019-12-28.xml`, if you use images in your post you can also tell the tool to download them: `insert command`
-3. Once you run that command you should have all your posts converted into Markdown!
+2. Run `npx wordpress-export-to-markdown --input=thedeployguy.WordPress.2019-12-28.xml`, when you run this a wizard will come up asking you a bunch of questions. Each of this will be custom based on your wordpress setup but here is what I choose:
+```sh
+$ npx wordpress-export-to-markdown --input=thedeployguy.WordPress.2019-12-28.xml
 
+Starting wizard...
+? Path to output folder? output
+? Create year folders? No
+? Create month folders? No
+? Create a folder for each post? No
+? Prefix post folders/files with date? Yes
+? Save images attached to posts? Yes
+? Save images scraped from post body content? No
+```
+
+3. Once you run that command you should have all your posts converted into Markdown!
 
 If you look at the format the post it looks very similar to how the sample posts look in the `content/blog` directory e.g: ``output\2018-04-22-2018-my-year-so-far-goals-progress-report\index.md. If you open one of the sample posts you will also see that frontmatter has been added to the posts i.e the tool provides and pull the metadata for your posts. 
 
