@@ -1,6 +1,6 @@
 ---
 title: "WordPress to Gatsby: Migrating Posts/Pages from WordPress"
-date: "2020-02-XX"
+date: "2020-03-03"
 description: ""
 ---
 
