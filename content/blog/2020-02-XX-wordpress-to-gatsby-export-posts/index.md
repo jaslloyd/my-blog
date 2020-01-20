@@ -16,7 +16,9 @@ While there are various ways to getting data out of WordPress, I am going to be 
 ## Exporting Data from WordPress
 
 
+## Using wordpress-export-to-markdown to Generate markdown Posts.
 
+## Importing markdown posts into new blog.
 
 I should not I do not recommend this way if you are keeping your WordPress site around in the backend or using it as headless WordPress, you can still do what I am going to show but there are probably better ways for that.
 
