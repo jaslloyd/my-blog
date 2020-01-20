@@ -23,3 +23,7 @@ Make sure you have a Github or Bit Bucket account, also make sure your latest bl
 
 Once you complete the steps you should have your blog repository connected. Now back on your Netlify Dashboard you will see a new application with some crazy name. If it is was successful you can click your site an will see your domain name e.g: https://ecstatic-jsds-5nk3as.netlify.com and if you click you should now see your blog!!
 
+### Continuous Deployment
+
+## Conclusion
+
