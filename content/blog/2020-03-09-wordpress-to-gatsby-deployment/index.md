@@ -21,7 +21,7 @@ Make sure you have a Github or Bit Bucket account, also make sure your latest bl
 3. Once your sign up is completed you will be brought to your Dashboard.
 4. Click 'New Sign from Github', you will be brought to the very simple 3 step setup process. 
 
-Once you complete the steps you should have your blog repository connected. Now back on your Netlify Dashboard you will see a new application with some crazy name. If it is was successful you can click your site an will see your domain name e.g: https://ecstatic-jsds-5nk3as.netlify.com and if you click you should now see your blog!!
+Once you complete the steps you should have your blog repository connected. Now back on your Netlify Dashboard you will see a new application with some crazy name. If it is was successful you can click your site an will see your domain name e.g: https://ecstatic-jang-39a880.netlify.com and if you click you should now see your blog!!
 
 ### Continuous Deployment
 
