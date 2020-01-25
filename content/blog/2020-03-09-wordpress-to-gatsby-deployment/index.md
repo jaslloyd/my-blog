@@ -4,7 +4,7 @@ date: "2020-03-09"
 description: ""
 ---
 
-Welcome back, this is the third post on migrating a WordPress Site/Blog to Gatsby. I am in the process of migrating my blog to Gatsby so I taught it would be good to document the process. Today I am going be discussing how to deploy our blog to Netlify. We populated the Blog with posts which we imported from WordPress in the [last Post](https://link-to-last-post.com), now it is time to get it live.
+Welcome back, this is the third post on migrating a WordPress Site/Blog to Gatsby. I am in the process of migrating my blog to Gatsby so I taught it would be good to document the process. Today I am going be discussing how to deploy our blog to Netlify. We populated the Blog with posts which we imported from WordPress in the [last post](https://link-to-last-post.com), now it is time to get it live.
 
 ## Netlify
 
