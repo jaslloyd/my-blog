@@ -25,9 +25,11 @@ Once you complete the steps you should have your blog repository connected. Now 
 
 Note: If it was unsuccessful netlify will provide logs so you can see where it failed. If you follow the steps in this series you shouldn't have to worry about the failures now.
 
+Netlify has a lot of features that I may or may not dive into, I want to keep these posts pretty short so I won't be going into too much detail at this time.
+
 ## Conclusion
 
-Now we have our site live on the internet!, everytime we push changes to Github, Netlify will automatically see the changes run any Gatsby command to create a production build and deploy the new version, this means our site is be continuously deployed e.g (CICD). I know this was a short post but it is an important step in migrating the Blog. Now we have a crazy domain name and the traffic is still being directed to old blog, which is fine for now, in the future we will take care of redirecting our domain to our new Netlify website. The great thing is Netlify will step you though each stage of the process. Anyway I hope you enjoyed this post.
+Now we have our site live on the internet!, every time we push changes to Github, Netlify will automatically see the changes run any Gatsby command to create a production build and deploy the new version, this means our site is be continuously deployed e.g (CICD). I know this was a short post but it is an important step in migrating the Blog. Now we have a crazy domain name and the traffic is still being directed to old blog, which is fine for now, in the future we will take care of redirecting our domain to our new Netlify website. The great thing is Netlify will step you though each stage of the process. Anyway I hope you enjoyed this post.
 
 Until next time,
 
