@@ -1,3 +1,8 @@
+---
+title: "Hosting a website on Azure Blob Storage"
+date: "2020-04-XX"
+---
+
 Welcome back, in the last series of posts we discussed migrating a Wordpress blog to Gatsby and then we deployed it to Netlify. Personally I think Netlify is the best platform to deploy a static website but there are alternatives. Today I am going to be discussing Azure Blob Storage and specifically hosting a static website on it.
 
 ## Azure
