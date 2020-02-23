@@ -21,7 +21,7 @@ Blob storage is part of the storage account service, to create a service account
 3. Click 'Add' on the Storage account page
 4. On the Create Storage account page Under Resource group click create new like so:
 ![Create Resource](./images/create_resource_group.PNG)
-5. Under instance details give your storage account a name e.g: 'static-web'
+5. Under instance details give your storage account a name e.g: 'staticweb'
 6. Select a location closest to you
 7. Leave all other options default and click 'Review + create'
 8. Once the validation passes click 'create'
@@ -81,9 +81,25 @@ Uploading via the portal one file or folder at a time is a pain so lets do it vi
 We are going to need to install azure-cli, the instructions can be found [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 
 Once installed lets make sure it is working and lets get it setup with Blob storage:
-1. 
+1. To confirm it is setup correct run `az account list`, if your account list details are show then it is working correctly! If not go back to the installation link and get it up.
+2. Run `az storage account keys list --account-name <insert storage account name>`, this will display auth keys which we will use in the next step.
+2. Setup environment variables to connect to blob storage, open your command line / terminal and create the following environment variables:
+```
+AZURE_STORAGE_ACCOUNT="<insert storage account name>"
+AZURE_STORAGE_KEY="<insert one of the keys value from step 3>"
+```
+3. Go to where your react project is e.g Documents/azure-static-test, run the azure storage batch upload command `az storage blob upload-batch -d $web -s Documents/azure-static-test/build`, this will upload everything in the build folder which is the product version of our site.
+4. Once that is all done via the primary endpoint and...Boom!:
+![Hosted React App](./images/hosted_react_app.png)
+
+We now have a React application hosted on Azure Blob Storage
 
 - TIL on azure command line and uploading a whole application.
 - Integration with VsCode: https://docs.microsoft.com/bs-latn-ba/azure/storage/blobs/storage-blob-static-website-host
 
 ## Conclusion
+
+I hope you enjoyed this post on Hosting a static website on Azure Blob Storage, we got a brief introduction to Azure and Azure storage accounts, we then hosted a simple index.html, we then took a React template application and hosted that on Blob storage. Hosting on blob storage does have a few downside mainly when it comes to routing as mentioned but so does setting up a server to host these files!. I hope you enjoyed this post and I hope you learned something new.
+
+Until next time
+Jason
