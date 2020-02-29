@@ -38,7 +38,7 @@ Blob storage is part of the storage account service, to create a storage account
 3. Toggle to Enabled and give an Index Document name as: index.html.
 4. Click Save
 
-Once that is completed you will be provided a Primary and Secondary endpoint for your website. If you visit them nothing will show but lets fix that by uploading a simple index.html file.
+Once that is completed you will be provided with a Primary and Secondary endpoint for your website. If you visit them nothing will show but let's fix that by uploading a simple index.html file.
 
 ##### Uploading to Blob Storage
 
@@ -70,9 +70,9 @@ We have successfully hosted our one file website, lets now host a more complex R
 
 Hosting a React / Angular or Vue application is no different, at the end of the day these frameworks produce a build that results in a bunch of javascript, css and html files with the main entry file being index.html just like our simple application. In theory you can take that entire build folder, upload it to azure blob storage and it should just work*
 
-* If you are using a client side router then you need to do some work with Azure CDN to allow routing to work. This is because when blob storage sees `/products` it looks for a product file and Azure CDN will allow you to change that behavior. [Insert link here]()
+* If you are using a client side router then you need to do some work with Azure CDN to allow routing to work. This is because when blob storage sees `/products` it looks for a product file and Azure CDN will allow you to change that behaviour. [Insert link here]()
 
-Lets deploy a React application to Blob Storage:
+Let's deploy a React application to Blob Storage:
 
 You will need nodejs and npm installed to do the following:
 
@@ -103,7 +103,7 @@ Note: You do not have to use the command line if you are using Vscode you can de
 
 ## Conclusion
 
-I hope you enjoyed this post on Hosting a static website on Azure Blob Storage, we got a brief introduction to Azure and Azure storage accounts, we then hosted a simple index.html, we then took a React template application and hosted that on Blob storage. Hosting on blob storage does have a few downside mainly when it comes to routing as mentioned but so does setting up a server to host these files!. I hope you enjoyed this post and you learned something new.
+I hope you enjoyed this post on Hosting a static website on Azure Blob Storage, we got a brief introduction to Azure and Azure storage accounts, we then hosted a simple index.html, we then took a React template application and hosted that on Blob storage. Hosting on blob storage does have a few downsides mainly when it comes to routing as mentioned but so does setting up a server to host these files!. I hope you enjoyed this post and you learned something new.
 
 Until next time
 Jason
