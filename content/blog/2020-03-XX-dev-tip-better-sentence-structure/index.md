@@ -24,7 +24,5 @@ Lets say instead of having 'add' we want to put 'or' well Intl.ListFormat does t
 In the previous code example change 'conjuction' to 'disjunction'
 ```tsx
 const formatter = new Intl.ListFormat('en', { style: 'long', type: 'disjunction' });
-
 // Output will be: "100, 101, or 102"
-
 ```
