@@ -26,3 +26,11 @@ In the previous code example change 'conjuction' to 'disjunction'
 const formatter = new Intl.ListFormat('en', { style: 'long', type: 'disjunction' });
 // Output will be: "100, 101, or 102"
 ```
+
+## Conclusion
+
+I hope you enjoyed this short DevTip on Intl.ListFormat, it is very powerful tool that you will be able to use in your code. I should note this is currently only supported in Chrome but should be available in future browser releases. 
+
+Until next time,
+
+Jason
