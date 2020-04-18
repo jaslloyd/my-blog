@@ -1,10 +1,10 @@
 ---
 title: "PR Reviews Tips: 6 tips for better Pull Requests"
-date: "2020-04-29"
+date: "2020-04-19"
 description: "6 tips for better Pull Requests"
 ---
 
-Pull requests are a huge part of being a developer, weather you are just getting started in your career or you have 10 years experience you will be/should be reviewing PRs. I want to give X tips for for better PR reviews (in no particular order)
+Pull requests are a huge part of being a developer, weather you are just getting started in your career or you have 10 years experience you will be/should be reviewing PRs. I want to give 6 tips for for better PR reviews (in no particular order)
 
 1. Set some time aside everyday just for PRs reviews - Your team members work hard on their PRs and when you are a team you have a duty to review PRs, give feedback and approve or reject them. You and your team members are the gatekeepers of the codebase so it if very important you find the time to do reviews. I do reviews in the morning, this is mostly because most of my team is in the US aso there is often PRs ready to review in the morning. Bonus Tip: Do them at the exact same time everyday, that way it becomes a habit.
 
@@ -18,4 +18,4 @@ Pull requests are a huge part of being a developer, weather you are just getting
 
 6. Approve the PR, if your most of your comments/concerns have been addressed - Don't leave it or never reply to PR comments. I know this can be hard with timing but make an effort to approve the PR.
 
-They were 6 tips for better Pull requests, if you have any more tips please reach out to me on [twitter](https://twitter.com/jaythewebdev) and let me know.
+They were 6 tips for better Pull requests, if you have any more tips please reach out to me on [twitter](https://twitter.com/jaythewebdev) and let me know. 
