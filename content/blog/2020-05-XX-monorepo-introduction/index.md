@@ -53,6 +53,57 @@ All the code for this post will be available [here](https://github.com/jaslloyd/
 - `private: true` is required for yarn workspaces, this setting will avoid us accidentally publishing the root repository, since we want each package/project to handle their own publishing this is required.
 - `workspaces: [ "packages/*" ]` - This is telling yarn you want to use workspaces and pointing out which projects / folders should be considered a workspace. In this package.json I have said everything in the packages folder should be considered workspace. The way I have specified it here is not required but it seems to have emerged as a standard and most projects that use yarn workspaces have this.
 
-2. 
+2. Create a FE application using create-react-app inside the packages folder.
+```sh
+cd packages/
+npx create-react-app fe1 --template typescript
+```
+
+3. Create a component library for our packages to use
+Imagine this as being a common component library that may be used in multiple frontends in your monorepo.
+We are going to use a boiler-plate generator to create a library template (Save us time).
+```sh
+cd packages/
+npx create-react-library react-lib
+```
+
+4. Edit package.json in react-lib
+```sh
+{
+    "name": "@monorepo/react-lib",
+    "version": "1.0.0",
+    ....
+}
+```
+
+A common approach is to add a package identifier in front of your packages e.g in this case it is @monorepo. This means when using something from our react-lib we can do something like this:
+`ìmport { ... } from '@monorepo/react-lib-v2'` which is really cool.
+
+Inside `src/index.tsx` you will see an ExampleComponent we are going to import this inside our fe1 application we built earlier but before we do that we need to compile the library to JS. This is not strictly required but it is good practice and it means projects in your monorepo do not have to use typescript to consume your library. 
+
+5. Run `yarn build` inside the `packages/react-lib` folder.
+
+This will compile and generate a dist folder, there are then entires in package.json (main, module) which will look for files in that folder and fetch the necessary packages.
+
+6. Inside `packages/fe1/src/App.tsx` import the ExampleComponent.
+```jsx
+import { ExampleComponent } from '@monorepo/react-lib';
+```
+
+7. Run `yarn build` inside packages/fe1 to generate your production build.
+
+This is where the power of yarn comes in, yarn will see all the imports and dependencies you are using and neatly bundle them all up for you as you generate your production build.
+
+8. Deploy or serve your production build wherever you want
+
+You can now take that production build and deploy or host it wherever you want :).
 
 
+### Using yarn workspaces commands to make things easier.
+
+
+
+## Resources
+
+
+## Conclusion
