@@ -38,7 +38,21 @@ In this post I am going to focus on yarn workspaces, I will write another post o
 
 ### Yarn workspaces
 
+All the code for this post will be available [here](https://github.com/jaslloyd/monorepo). Lets get started:
 
+1. Create a package.json file in the root of your directory
+```json
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
+```
 
+- `private: true` is required for yarn workspaces, this setting will avoid us accidentally publishing the root repository, since we want each package/project to handle their own publishing this is required.
+- `workspaces: [ "packages/*" ]` - This is telling yarn you want to use workspaces and pointing out which projects / folders should be considered a workspace. In this package.json I have said everything in the packages folder should be considered workspace. The way I have specified it here is not required but it seems to have emerged as a standard and most projects that use yarn workspaces have this.
+
+2. 
 
 
