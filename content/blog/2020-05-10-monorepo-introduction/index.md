@@ -1,6 +1,6 @@
 ---
 title: "Monorepo: Yarn Workspaces"
-date: "2020-05-XX"
+date: "2020-05-10"
 description: "Monorepo what the hell are they?"
 ---
 
