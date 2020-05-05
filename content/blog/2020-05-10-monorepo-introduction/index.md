@@ -1,16 +1,16 @@
 ---
-title: "Monorepo: Yarn Workspaces"
+title: "Monorepo: Learn by Example"
 date: "2020-05-10"
 description: "Monorepo what the hell are they?"
 ---
 
-Monorepos are becoming more and more popular, if you do not know what a monorepo is...think of it as simply have all your code for a particular project in the same repository, this includes backend, frontend and even infra code if needed. The term monorepo means different things to different people and you will find many definitions around the web but in the simplest terms if is having the code in one place. They are used in some very known / popular projects:
+Monorepos are becoming more and more popular if you do not know what a monorepo is...think of it as simply have all your code for a particular project in the same repository, this includes backend, frontend and even infra code if needed. The term monorepo means different things to different people and you will find many definitions around the web but in the simplest terms if is having the code in one place. They are used in some very known / popular projects:
 
 [create-react-app](https://github.com/facebook/create-react-app)
 
 [reach-ui](https://github.com/reach/reach-ui)
 
-Companies such as Facebook and google have also been [very public](https://medium.com/@maoberlehner/monorepos-in-the-wild-33c6eb246cb9) about using monorepos. Facebook practically take this to the extremely approach of having one repo for the entire company, this means all developers check in their code to the same repo, they then heavily use tooling to automate a lot of CICD workflows.
+Companies such as Facebook and Google have also been [very public](https://medium.com/@maoberlehner/monorepos-in-the-wild-33c6eb246cb9) about using monorepos. Facebook practically take this to the extreme of having one repo for the entire company, this means all developers check in their code to the same repo, they then heavily use tooling to automate a lot of CICD workflows.
 
 Advantages of monorepos
 
@@ -27,13 +27,13 @@ These are many other advantages and disadvantages but today I want to focus on g
 
 ## Monorepos in practice
 
-There are many tools to help you manage your monorepo, two of the most popular (at the time of writing this) are: [yarn workspaces]() and [lerna](), they both do very similar things. Lerna came before yarn workspaces, they both provide the same core functionality which is manage dependencies between multiple packages / projects. Lerna can use yarn workspaces under the hood to manage to dependencies but what lerna provides that workspaces doesn't is much more power of managing publishing packages to npm and automating update of them packages within your monorepo.
+There are many tools to help you manage your monorepo, two of the most popular (at the time of writing this) are [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) and [lerna](https://github.com/lerna/lerna), they both do very similar things. Lerna came before yarn workspaces, they both provide the same core functionality which is to manage dependencies between multiple packages/projects. Lerna can use yarn workspaces under the hood to manage to dependencies but what Lerna provides that workspaces don't is much more power of managing publishing packages to npm and automating the update of the packages within your monorepo.
 
-### When to use workspaces and when to use lerna?
+### When to use workspaces and when to use Lerna?
 
-My suggestion is, start off with yarn workspaces and only when you need to worry about publishing to npm start looking at lerna. The great thing with this approach is, you won't need to make any changes to make lerna work with yarn workspaces you just need to add a simple property to the lerna config file.
+My suggestion is, start off with yarn workspaces and only when you need to worry about publishing to npm start looking at Lerna. The great thing with this approach is, you won't need to make any changes to make Lerna work with yarn workspaces you just need to add a simple property to the Lerna config file.
 
-This post is going to focus on yarn workspaces, I will write another post on expanding this with lerna.
+This post is going to focus on yarn workspaces, I will write another post on expanding this with Lerna.
 
 ### Yarn workspaces
 
@@ -83,7 +83,7 @@ If you do not want to use a boiler-plate generator for your library you can see 
 A common approach is to add a package scope to your monorepo packages e.g in this case it is @monorepo. This means when using something from our react-lib we can do something like this:
 `ìmport { ... } from '@monorepo/react-lib-v2'` which is really cool.
 
-Inside `src/index.tsx` you will see an ExampleComponent we are going to import this inside our front-end application we built earlier. Before we do that we need to compile the library to JS, tis is not strictly required but it is good practice and it means projects in your monorepo do not have to use typescript to consume your library. 
+Inside `src/index.tsx` you will see an ExampleComponent we are going to import this inside our front-end application we built earlier. Before we do that we need to compile the library to JS, this is not strictly required but it is good practice and it means projects in your monorepo do not have to use typescript to consume your library. 
 
 5. Run `yarn build` inside the `packages/react-lib` folder.
 
