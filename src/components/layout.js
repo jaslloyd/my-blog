@@ -1,9 +1,26 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import Toggle from './Toggle';
 import { rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
+
+  state = {
+    theme: 'light'
+  }
+
+  handleThemeChange = () => {
+    console.log('handle')
+    this.setState({ theme: this.state.theme === 'light' ? 'dark' : 'light' }, () => {
+      const body = document.querySelector('body');
+      if (this.state.theme === 'light') {
+        body.className = 'light'
+      } else {
+        body.className = 'dark'
+      }
+    })
+  }
+
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
@@ -14,7 +31,7 @@ class Layout extends React.Component {
         <h1
           style={{
             ...scale(1.5),
-            marginBottom: rhythm(1.5),
+            marginBottom: 0,
             marginTop: 0,
             fontSize: "1.976425rem",
           }}
@@ -61,7 +78,18 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}</header>
+        <header style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: '2.625rem'
+        }}>
+          {header}
+
+          <Toggle
+            defaultChecked={this.state.theme === 'light'}
+            handleThemeChange={this.handleThemeChange} />
+        </header>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
