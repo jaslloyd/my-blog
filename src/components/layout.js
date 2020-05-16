@@ -6,7 +6,15 @@ import { rhythm, scale } from "../utils/typography"
 class Layout extends React.Component {
 
   state = {
-    theme: window.localStorage ? localStorage.getItem('theme') || 'light' : 'light'
+    theme: this.initialState()
+  }
+
+  initialState() {
+    if (typeof window !== `undefined`) {
+      return localStorage.getItem('theme') || 'light'
+    } else {
+      return 'light'
+    }
   }
 
   componentDidMount = () => {
