@@ -6,19 +6,24 @@ import { rhythm, scale } from "../utils/typography"
 class Layout extends React.Component {
 
   state = {
-    theme: 'light'
+    theme: localStorage.getItem('theme') || 'light'
+  }
+
+  componentDidMount = () => {
+    console.log(localStorage.getItem('theme'))
+    this.setBodyClass(this.state.theme)
   }
 
   handleThemeChange = () => {
-    console.log('handle')
     this.setState({ theme: this.state.theme === 'light' ? 'dark' : 'light' }, () => {
-      const body = document.querySelector('body');
-      if (this.state.theme === 'light') {
-        body.className = 'light'
-      } else {
-        body.className = 'dark'
-      }
+      this.setBodyClass(this.state.theme);
+      localStorage.setItem('theme', this.state.theme)
     })
+  }
+
+  setBodyClass = (theme) => {
+    const body = document.querySelector('body');
+    body.className = theme;
   }
 
   render() {
@@ -54,6 +59,7 @@ class Layout extends React.Component {
           style={{
             fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
+            marginBottom: 0
           }}
         >
           <Link
@@ -87,7 +93,7 @@ class Layout extends React.Component {
           {header}
 
           <Toggle
-            defaultChecked={this.state.theme === 'light'}
+            isChecked={this.state.theme === 'dark'}
             handleThemeChange={this.handleThemeChange} />
         </header>
         <main>{children}</main>
