@@ -1,9 +1,28 @@
+body.light {
+  --textNormal: rgba(0, 0, 0, 0.9);
+  --bg: #fff;
+}
+
+body.dark {
+  --textNormal: #fff;
+  --bg: #282c35;
+}
+
+body.dark a {
+  color: #BD946C
+}
+
+body {
+  color: var(--textNormal);
+  background-color: var(--bg);
+}
+
 article ul {
   margin-left: 1.75rem;
 }
 
 /**
- * Based on copypasta from Remy Bach and Sarah Drasner
+ * VSCode Theme for coding
  */
 code[class*="language-"],
 pre[class*="language-"] {
