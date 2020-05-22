@@ -1,9 +1,39 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import Toggle from './Toggle';
 import { rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
+
+  state = {
+    theme: this.initialState()
+  }
+
+  initialState() {
+    if (typeof window !== `undefined`) {
+      return localStorage.getItem('theme') || 'light'
+    } else {
+      return 'light'
+    }
+  }
+
+  componentDidMount = () => {
+    console.log(localStorage.getItem('theme'))
+    this.setBodyClass(this.state.theme)
+  }
+
+  handleThemeChange = () => {
+    this.setState({ theme: this.state.theme === 'light' ? 'dark' : 'light' }, () => {
+      this.setBodyClass(this.state.theme);
+      localStorage.setItem('theme', this.state.theme)
+    })
+  }
+
+  setBodyClass = (theme) => {
+    const body = document.querySelector('body');
+    body.className = theme;
+  }
+
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
@@ -14,7 +44,7 @@ class Layout extends React.Component {
         <h1
           style={{
             ...scale(1.5),
-            marginBottom: rhythm(1.5),
+            marginBottom: 0,
             marginTop: 0,
             fontSize: "1.976425rem",
           }}
@@ -37,6 +67,7 @@ class Layout extends React.Component {
           style={{
             fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
+            marginBottom: 0
           }}
         >
           <Link
@@ -61,7 +92,18 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}</header>
+        <header style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: '2.625rem'
+        }}>
+          {header}
+
+          <Toggle
+            isChecked={this.state.theme === 'dark'}
+            handleThemeChange={this.handleThemeChange} />
+        </header>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with

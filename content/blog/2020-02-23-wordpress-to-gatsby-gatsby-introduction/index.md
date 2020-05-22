@@ -1,3 +1,9 @@
+---
+title: "WordPress to Gatsby: Gatsby Introduction"
+date: "2020-02-23"
+description: ""
+---
+
 Welcome back, today I am going to starting a new series on migrating a WordPress Site/Blog to Gatsby. I am in the process of migrating this blog to Gatsby so I taught it would be good to document the process. Today I am going be discussing Gatsby and specifically how to create a starter blog up and running so we have something to start migrating to.
 
 ## What is Gatsby
