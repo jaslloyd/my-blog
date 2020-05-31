@@ -104,7 +104,18 @@ function App() {
 
 Reload http://localhost:3001/ and you should now see the new Header component being served from the Navigation federated module. The really cool thing is, if you update the Header component in Nav you should see the changes right away!
 
-Now that we have a good idea of how to use Federated module lets expose
+Now that we have a good idea of how to use Federated module lets try out exposing a component ourselves.
+
+### DIY Exposing the ProductCarousel component
+
+Earlier I said while home is not exposing anything at the moment we were going to change that. Home has a ProductCarousel component that we would like to use inside our search application so lets do that.
+
+1. Expose the ProductCarousel component inside home/webpack.config.js
+   [insert details here]
+2. Update search/webpack.config.js to include the new remote of home
+   [insert details here]
+3. Update search/public/index.html to include the script tag to point to remoteEntry of home.
+   [insert details here]
 
 ### TLDR; How to Consume from a Remote:
 
