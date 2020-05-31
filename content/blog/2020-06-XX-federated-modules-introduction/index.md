@@ -21,6 +21,8 @@ We are going to be using a nice start template from [Jack Herrington](https://gi
 - Navigation Bar - It will only exposes code (Navigation Bar) it won't consume other Modules.
 - Search Page - It will consume from more than one remote (Nav, Home) and won't expose anything.
 
+If you are not sure of things or have a few questions check out the FAQ section at the bottom of the page!
+
 ### Module Federation Setup
 
 Lets open the webpack.config.js file for nav:
