@@ -196,6 +196,29 @@ Voila check in our browser:
 4. Import Stuff exposed from Remote.
 5. Profit.
 
+## Conclusion
+
+I hope you enjoyed this post on Federated Modules, I am really excited for the future of Webpack and federated modules, I recently got into Monorepos, Micro Front-ends and there doesn't seems to be much in the way of standards, there are lots of tools and solutions out there for kinda doing these things but they are kinda quirky. I loved seeing that this solution will be baked into Webpack 5, I plan on using it in a few future project to experiment more with it! so you may see more posts from me about it!
+
+Until next time
+Jason
+
+p.s See FAQ, alternatives and Further reading resources below
+
+## Questions / FAQ
+
+Q. What is the bootstrap.tsx file?
+A.
+
+Q. Does this work with server side rendering?
+A. Yes it does! which is the cool thing, an example can be found [here](...)
+
+Q. What are the Alternatives to Federated Modules
+A. INSERT link to Alternatives to Federated Modules
+
+Q.
+A.
+
 ## Alternatives to Federated Modules
 
 - Using a Micro FE framework like SingleSpa
