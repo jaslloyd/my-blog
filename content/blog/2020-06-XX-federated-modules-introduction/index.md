@@ -1,14 +1,14 @@
 ---
 title: "Federated Modules Introduction"
-date: "2020-06-XX"
-description: "Webpack 5 Introduces Module Federation, going to explain the what and why"
+date: "2020-05-31"
+description: "Webpack 5 Introduces Module Federation, going to explain the what, why and how"
 ---
 
-Module Federation allows a JavaScript application to dynamically load code from another application. This allows the sharing of dependencies, e,g React components, lodash or even helper functions. The cool thing is if an application consuming one of federated modules does not have that dependency webpack will automatically download it. This will come has a feature in Webpack 5.
+Module Federation allows a JavaScript application to dynamically load code from another application and  in the process. This also allows the sharing of dependencies, e,g React components, lodash or even helper functions. The cool thing is if an application consuming one of federated modules does not have that dependency webpack will automatically download it. This will come has a feature in Webpack 5.
 
 ## Terminology
 
-- Module Federation - ???
+- Module Federation - See above^^
 - A Host - Webpack build that is initialized during a page load i.e Often consuming other (remote) modules.
 - A Remote - Another Webpack build being consumed by a Host. i.e Being consumed by a Host(s)
 - Bidirectional-hosts - A webpack build that works as a host and a remote.
