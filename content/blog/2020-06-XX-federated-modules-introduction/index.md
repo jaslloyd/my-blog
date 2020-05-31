@@ -1,5 +1,5 @@
 ---
-title: "Federated Modules Introduction"
+title: "Module Federation in Javascript | Introduction"
 date: "2020-05-31"
 description: "Webpack 5 Introduces Module Federation, going to explain the what, why and how"
 ---
