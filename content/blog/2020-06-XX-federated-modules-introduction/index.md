@@ -105,7 +105,7 @@ function App() {
 ```
 
 Reload http://localhost:3001/ and you should now see the new Header component being served from the Navigation federated module. The really cool thing is, if you update the Header component in Nav you should see the changes right away!
-[insert image]
+![Nav in Home Remote](./images/navRemoteInHome.png)
 
 Now that we have a good idea of how to use Federated module lets try out exposing a component ourselves.
 
@@ -187,10 +187,10 @@ function App() {
 }
 ```
 
-Voila check in our browser:
-[insert screenshot]
+Voila check in our browser, the ProductCarousel is now on the search page
+![Home Remote used in Search](./images/homeRemoteInSearch.png)
 
-### TLDR Reminder on How to Consume from a Remote:
+### TLDR; Reminder on How to Consume from a Remote:
 
 1. Add the name of the remote to the remotes array in the ModuleFederationPlugin entry in the webpack.config.js file.
 2. Add a remoteEntry in index.html
@@ -200,7 +200,7 @@ Voila check in our browser:
 
 ## Conclusion
 
-I hope you enjoyed this post on Federated Modules, I am really excited for the future of Webpack and federated modules, I recently got into Monorepos, Micro Front-ends and there doesn't seems to be much in the way of standards, there are lots of tools and solutions out there for kinda doing these things but they are kinda quirky. I loved seeing that this solution will be baked into Webpack 5, I plan on using it in a few future project to experiment more with it! so you may see more posts from me about it!
+I hope you enjoyed this post on Federated Modules, I am really excited for the future of Webpack and federated modules, I recently got into Monorepos, Micro Front-ends and there doesn't seems to be much in the way of standards, there are lots of tools and solutions out there for kinda doing these things but they are kinda quirky. Also the really cool thing about Federated Modules is you can use it to expose anything, images, components, context, routes etc!. I loved seeing that this solution will be baked into Webpack 5, I plan on using it in a few future project to experiment more with it! so you may see more posts from me about it!
 
 Until next time
 Jason
@@ -209,17 +209,16 @@ p.s See FAQ, alternatives and Further reading resources below
 
 ## Questions / FAQ
 
-Q. What is the bootstrap.tsx file?
-A.
+Q. Why is there a index.jsx file and a bootstrap.jsx file?
+A. Currently Federated Modules needs a top level promise to be able to work this is why you see import('./bootstrap') in the index.jsx file, the creator goes more into detail why this in on his [YouTube Channel](https://www.youtube.com/channel/UCCXPbN9FSA7ioI8NWplkjNg), at the time of writing this, this file is a requirement but it looks like they are trying to get rid of it...maybe
 
 Q. Does this work with server side rendering?
-A. Yes it does! which is the cool thing, an example can be found [here](...)
+A. Yes it does! which is the cool thing, an example can be found [here](https://github.com/module-federation/module-federation-examples/tree/master/server-side-rendering)
 
+Q. Can you use different frameworks together? React, Vue, Angular
+A. Yes you can, see example [here]()
 Q. What are the Alternatives to Federated Modules
-A. INSERT link to Alternatives to Federated Modules
-
-Q.
-A.
+A. See Below!
 
 ## Alternatives to Federated Modules
 
