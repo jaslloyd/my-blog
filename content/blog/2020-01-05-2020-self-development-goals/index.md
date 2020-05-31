@@ -21,7 +21,7 @@ Another year is here and it's time for me to write my goals for 2020. This is th
 **Goal**: Publish 12 Blog Posts  
 **How it will be measured**: As long as I am writing at least one post per month I know I am on track.  
 **Due Date**: 31/12/2020  
-**Next Steps:** Already started this**,** I have a few already scheduled for January including this one.
+**Next Steps:** **Already started this** I have a few already scheduled for January including this one.
 
 **Goal**: Read 12 non-fiction Books  
 **How it will be measured**: As long as I am reading at least one book per month I should be fine. Also, 12 is the perfect amount I may even read less as I want to apply more of the principles I have learned instead of just reading about it.  
