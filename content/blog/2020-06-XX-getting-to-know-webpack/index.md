@@ -4,6 +4,10 @@ date: "2020-06-XX"
 description: "Webpack is a very powerful and complicated tool, developers are often put off from it but today I want to give a beginner friendly look into Webpack"
 ---
 
+// Introduction here...
+// Why I am looking into it now
+// Understanding Abstractions
+
 ## What is webpack
 
 > At its core webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles.
@@ -19,16 +23,237 @@ Webpack has about 6 core concepts:
 - Mode
 - Browser Compatibility
 
-We are going to dive into each of these concept as we build out own webpack.config file, I think this is the best way to understand webpack.
+We are going to dive into each of these concept as we build out own webpack.config file and by the end of this we should be able to bundle a Simple React application. I think the best way to understand webpack is to build something.
 
-// Why we need webpack
-// Why I am looking into it now
-// Brief overview of what we are going to do with it, (Get react working with it)
-// Starter project, Hello world webpack
-// Webpack, webpack-cli. webpack-dev-server
-// Simple webpack config with index.js, hello world
-// Bringing in React (Loaders)
-// Bringing in Typescript (Loaders)
+## Webpack Entry & Output
+
+Step 1: Create an empty directory with webpack.config.js and a package.json file
+Open up your terminal or command file and type the following (➜ is my terminal prompt so ignore that)
+
+```sh
+# Make the tutorial directory
+➜  mkdir webpack-tut
+➜  cd webpack-tut
+# Create the webpack.config.js file
+➜  touch webpack.config.js
+# Generate package.json file
+➜  npm init -y
+```
+
+Step 2: Install Webpack and webpack cli
+
+```sh
+➜  webpack-tut npm install webpack webpack-cli
+```
+
+webpack-cli allows us to run webpack commands from the command line.
+
+Open that folder in your favorite editor, mine is vscode.
+
+Step 2: Add an Entry point for Webpack
+
+```js
+module.exports = {
+  entry: "./src/index.js",
+}
+```
+
+`entry` specifies the start point for webpack, this is where it starts to crawl your repository to build a dependency graph to know what it should include and what it shouldn't
+
+Step 3: Add an Output for Webpack
+
+```js
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: __dirname + "/public",
+    publicPath: "/",
+    filename: "bundle.js",
+  },
+}
+```
+
+In step 2 we specified the input for webpack, now we are telling webpack where to output after it has done processing or another way said `output` instructs webpack on how and where it should output your bundles, assets and anything else you bundle or load with webpack.
+
+Believe it or not that is the minimum webpack configuration for it to start bundling js, so lets try it out
+
+Step 4: Create the entry point file `src/index.js`
+
+Back on the command line run / create a folder and file via explorer
+
+```sh
+➜  cd webpack-tut
+➜  mkdir src
+➜  cd src
+➜  touch index.js
+```
+
+Open index.js in your editor and add `js console.log('Hello webpack')`
+
+Step 5: Bundle our one file application.
+
+Now that we have out entry point, let add an npm script to create our webpack bundle
+
+Open package.json, under the script section add `"build": "webpack"`
+
+```json
+{
+  "name": "webpack-tut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
+```
+
+Now open up your terminal once more and run: `npm run build`. You should see webpack run and if you look at your explorer you will have a new folder called public with a new file called `bundle.js`. If you open it and right at the end you will see our Hello world console.
+
+Awesome, we have webpack building our one file application! Not very useful at the moment but we can build on this solid base and we know webpack is working, lets discuss Loaders
+
+## Webpack Loaders and Plugins
+
+Lets take the simple webpack config we built in the last step and add support for react!
+
+### Loaders
+
+Out of the box, webpack only understands JavaScript and JSON files. Loaders allow webpack to process other types of files and convert them into valid modules that can be consumed by your application. React uses jsx files, since webpack can't handle jsx files directly we need to add a loader to support that so lets do it:
+
+Loaders need to be npm installed because they are separate packages and as stated don't come built into webpack. Open up your terminal once again, make sure you are in the webpack-tut directory
+
+Step 6: Install babel-loader and its dependencies
+
+```sh
+➜  npm install @babel/core @babel/preset-react babel-loader --save-dev
+```
+
+`babel-loader` is the webpack loader that we will use to transform .jsx files into javascript but you might be wondering what are these other packages.
+
+Babel is a Javascript compiler, it allows us to write Modern + future Javascript and Babel will compile the code to support older browsers / version of Javascript. Babel is another complicated tool but just know its job is to compile Javascript and this is why it makes a great candidate to compile .jsx files to .js file so the browser can work with them.
+
+`@babel/core @babel/preset-react` - Core is the main babel library that the loader depends on, @babel/preset-react is a set of default that will help babel compile react applications. There are a whole bunch of [presets](https://babeljs.io/docs/en/presets).
+
+Step 7: Use webpack loader babel-loader to compile jsx files to js
+Back to webpack, now that we have installed the necessary packages lets add a loader to convert jsx files into js files, open webpack.config.js:
+
+```js
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: __dirname + "/public",
+    publicPath: "/",
+    filename: "[name].bundle.js",
+  },
+  resolve: {
+    extensions: [".jsx", ".js", "json"],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        loader: require.resolve("babel-loader"),
+        exclude: /node_modules/,
+        // Options for the plugin
+        options: {
+          presets: [require.resolve("@babel/preset-react")],
+        },
+      },
+    ],
+  },
+}
+```
+
+We have added `module/rules` section with one entry, modules are where loaders are specified. Loaders have two "required" properties, test & use/loader, test is used to identifer the files the specific loader should transform, in case above babel-loader should look at jsx files and compile them, it should also use @babel/preset-react for its defaults.
+
+Remember, this may look confusing but lets say this in english, we need to convert jsx files into js files for the browser to understand, webpack only understands js and json files so we need to update how webpack looks for jsx files so we changed the `resolve` property. Now that webpack can find the jsx files we need a loader to compile it to js, that is `babel-loader`. That is all we did above.
+
+Step 8: Install react, create a jsx file
+
+```sh
+➜  npm install react react-dom
+```
+
+Create an App.jsx file in src
+
+```jsx
+import React from "react"
+
+const App = () => (
+  <div>
+    <h1>Hello from React and Webpack</h1>
+  </div>
+)
+export default App
+```
+
+Modify out `index.js` to mount our react App.
+
+```js
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+
+ReactDOM.render(<App />, document.getElementById("root"))
+```
+
+If you have used react before you know this line you might say but we don't have a root element to mount to, lets change that.
+
+In `webpack-tut/public` create an index.html file
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <title>
+    Webpack Tutorial
+  </title>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="main.bundle.js"></script>
+</html>
+```
+
+We have a div with an id of root so react can mount the application, we also have included our main.bundle.js file.
+
+Lets run webpack one more time to make sure main.bundle.js is up to date with our react code.
+
+```sh
+➜  npm run build
+```
+
+If you open your main.bundle.js file you will see it has gotten a lot bigger...well now it is including react and react-dom that is good news for this tutorial! Let see if it works in a browser...
+
+Step 9: Testing out React application in a browser
+
+We built our application bundle which included react in the last step now we need a way to serve that bundle, the easiest way on our machine is to use an npm package called serve so lets do that. Back at the command line
+
+```sh
+➜ npx serve public
+```
+
+Our assets live in public so we serve will host that folder. Open http://localhost:5000 and...
+![Hello World React and Webpack](helloWorldReactWebpack.png)
+
+Cool it works!, you have just created a webpack configuration that supports building react application. You have built a very very small version of create-react-app how awesome is that!
+
+## Conclusion
+
+Congrats on building a webpack configuration that supports react! I think that is a good place to stop this first post!. We learned about 3 of webpack core concepts Entry, Output, Loaders, in the next few tutorials we will look at adding typescript support via loaders and making our build a bit more production ready e.g Minification, Uglyifying and optimizing our code with the use of Plugins. I hope you enjoyed this post!
+
+Until next time,
+
+Jason
+
+// Bringing in Typescript
 // Getting it semi-Production Ready (Plugins e.g Minification, Uglyify js)
 // Challenge CRA Web pack configuration
 // Next Steps Detailed look at CRA webpack config file.
