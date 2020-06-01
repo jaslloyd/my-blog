@@ -4,9 +4,7 @@ date: "2020-06-XX"
 description: "Webpack is a very powerful and complicated tool, developers are often put off from it but today I want to give a beginner friendly look into Webpack"
 ---
 
-// Introduction here...
-// Why I am looking into it now
-// Understanding Abstractions
+Webpack is a very powerful tool, a lot of applications in modern web development are using webpack to bundle their applications. If you have ever used create react app well that uses webpack behind the scenes to bundle its code, it mostly hides this fact from you unless you eject from it. Most of the time web developers don't take the time to understand the abstractions or understand what is going on under the hood in some of the tools we use, while most of the time it is not necessary to understand how these tools work (and that is the main point of these tools) there will be points in your journey where you may have to dig deeper. Today I want to help you better understand webpack and show you it is not as complicated as you might think.
 
 ## What is webpack
 
