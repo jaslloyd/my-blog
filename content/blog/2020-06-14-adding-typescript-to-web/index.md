@@ -251,9 +251,95 @@ px serve public`, open http://localhost:5000 and we are still working!. It may s
 
 ## Better development workflow
 
-// Constantly running npm run build is annoying, constantly serving it is annoying so lets fix that by using webpack-dev-server.
-// dev-server intro, configuration and use,
+Before I conclude this tutorial I want to discuss making our development workflow better, at the moment everytime we make a change to our application files we have to manually run `npm run build` and this gets very tiring. Also in the future you may want to code split your code or you may have many css files, manually update index.html everytime we do a build is not only annoying but it is also very error prone. The good news is webpack has a bunch of plugins to help us do a bunch of these tasks.
+
+### Webpack Dev Server
+
+Lets solve our first problem, having to manually run `npm run build` everytime we make a change this is where webpack dev server comes in. Webpack Dev server allows webpack to bundle the assets everytime we make a change to our application, first we need to install it:
+
+```sh
+➜  npm install webpack-dev-server html-webpack-plugin --save-dev
+```
+
+html-webpack-plugin - The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles. This is especially useful for webpack bundles that include a hash in the filename which changes every compilation i.e this will automatically update our index.html and include the scripts and css files we generate automatically.
+
+We need to let webpack now we want to use webpack dev server so we need to update our webpack.config.js file:
+
+```js
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+
+module.exports = {
+  entry: "./src/index",
+  output: {
+    path: __dirname + "/public",
+    publicPath: "/",
+    filename: "[name].bundle.js",
+  },
+  devServer: {
+    contentBase: "./dist",
+    port: "3001",
+  },
+  resolve: {
+    extensions: [".ts", ".tsx", ".jsx", ".js"],
+  },
+  module: {
+    rules: [
+      // Loader has two "required" properties, test & use/loader, test is used to identifer the files the specific loader should transform, in case below babel-loader should look at jsx files.
+      {
+        test: /\.(js|mjs|jsx|ts|tsx)$/,
+        loader: require.resolve("babel-loader"),
+        exclude: /node_modules/,
+        // Options for the plugin
+        options: {
+          presets: [
+            require.resolve("@babel/preset-react"),
+            require.resolve("@babel/preset-typescript"),
+          ],
+        },
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin(),
+    // The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles. This is especially useful for webpack bundles that include a hash in the filename which changes every compilation
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
+}
+```
+
+We have added the `devServer` options to our config, we are specifying where our content will live after a build happens so it can serve it and we tell it what port to serve it on.
+
+Now that we have updated our webpack.config.js file lets update our package.json file to use the webpack-dev-server cli.
+
+```json
+// Rest of package.json here
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+// Rest here
+```
+
+Run `npm start` and your browser should open a new tab http://localhost:3001/ with our application showing, the awesome thing is when we make a change to our application for example updating our welcome message the change is reflected right away! How awesome is that.
+
+In the webpack config above, there is a new section called `plugins` let me take a minute to discuss plugins:
+
+#### Webpack Plugins
+
+Webpack has a rich plugin interface, you can see list of some of them [here](https://webpack.js.org/plugins/), these plugins extend webpack capabilities to do even more things e.g: Minification of your code so your users get small bundle sizes via the TerserPlugin , automatically create and update html files via HtmlWebpackPlugin plugin, extract CSS files and have a more preformant application using the MiniCssExtractPlugin plugin. We are going to be using a lot of these plugins in the next webpack tutorial about making our webpack config more production ready.
 
 ## Conclusion
 
-// Blah
+Congrats on building upon the last tutorial and making your webpack configuration support Typscript and CSS. We learned about more loaders, we also learned about improving our development workflow with webpack-dev-server then we finished off by briefly exploring plugins. In the next post we will be building again on what we have here and making a more production ready webpack configuration that includes minification, code-splitting and much. I will see you in the next one.
+
+Until next time,
+
+Jason
