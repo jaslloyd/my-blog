@@ -96,6 +96,20 @@ Excellent we have added support for Typescript, lets move on and add support for
 
 ## Adding CSS support to Webpack
 
+// We want to support `import './index.css'` like create react app does
+// Add two loaders, `npm install css-loader style-loader --save-dev`
+// Update webpack
+// Create index.css with crazy background add `import './index.css'` to App.js.
+// This will find all the css around your application and add it into a style tag at the top of the page, not really optmized, cra will extract each css files into its own style tag, it also allows for hot reloading css which is awesome, so lets do that in our configuration by adding a plugin, show example
+// Webpack plugins, MiniCssExtractPlugin plug https://webpack.js.org/plugins/mini-css-extract-plugin/
+// Webpack config with plugins
+// Test it out, (more than one style tag)
+
 ## Better development workflow
 
+// Constantly running npm run build is annoying, constantly serving it is annoying so lets fix that by using webpack-dev-server.
+// dev-server intro, configuration and use
+
 ## Conclusion
+
+// Blah
