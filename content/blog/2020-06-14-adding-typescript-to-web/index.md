@@ -1,5 +1,5 @@
 ---
-title: "Webpack - How to add Typescript and CSS support | Part 2"
+title: "Getting to know Webpack - How to add Typescript and CSS support | Part 2"
 date: "2020-06-14"
 description: "This is part 2 of exploring the world of webpack, we are going to add typescript and css support, we are also going to learn about webpack plugins"
 ---
