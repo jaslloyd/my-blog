@@ -1,5 +1,5 @@
 ---
-title: "Webpack - Beginner friendly introduction | Part 1"
+title: "Getting to know Webpack - Beginner friendly introduction | Part 1"
 date: "2020-06-07"
 description: "Webpack is a very powerful and complicated tool, developers are often put off from it but today I want to give a beginner friendly look into Webpack"
 ---
