@@ -52,7 +52,7 @@ Open that folder in your favorite editor, mine is vscode.
 
 ### Step 3: Add an Entry point for Webpack
 
-```js
+```js{57}
 module.exports = {
   entry: "./src/index.js",
 }
