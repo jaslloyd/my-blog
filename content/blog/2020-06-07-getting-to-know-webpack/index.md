@@ -62,7 +62,7 @@ module.exports = {
 
 ### Step 4: Add an Output for Webpack
 
-```js{2:6}
+```js{2-6}
 module.exports = {
   entry: "./src/index.js",
   output: {
