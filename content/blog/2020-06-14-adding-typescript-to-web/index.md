@@ -55,7 +55,7 @@ Once that command is finished you should have a tsconfig.json file in the root o
 
 Lets try compile our first typescript files, in the last tutorial we created `App.jsx` and `index.js`, lets rename them to `App.tsx` and `index.tsx`. Lets add some typescript to `App.tsx` to make sure it compiles:
 
-```tsx
+```tsx{4}
 import React from "react"
 
 const App = () => {
@@ -136,7 +136,7 @@ body {
 
 Now import it in App.tsx
 
-```tsx{2,5}
+```tsx{2}
 import React from "react"
 import "./index.css"
 
