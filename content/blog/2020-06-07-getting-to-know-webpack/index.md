@@ -62,7 +62,7 @@ module.exports = {
 
 ### Step 4: Add an Output for Webpack
 
-```js{2-6}
+```js{3-6}
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -143,7 +143,7 @@ Out of the box, webpack only understands JavaScript and JSON files. Loaders allo
 
 Back to webpack, now that we have installed the necessary packages lets add a loader to convert jsx files into js files, open webpack.config.js:
 
-```js
+```js{8-23}
 module.exports = {
   entry: "./src/index.js",
   output: {
