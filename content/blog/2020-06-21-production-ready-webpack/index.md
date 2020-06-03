@@ -305,11 +305,100 @@ Run `npm run build` and you should see public/static/js and public/static/css wi
 
 ## Using a build/dist folder instead of public and cleaning old assets
 
-Until now we have being using the public and this not really the best idea because any files inside there get minified and that is probably not what you want to do. You would like to keep at least the index.html file non minified so you can edit it and then when we build for production it gets minified and put somewhere else well that is what CRA does, CRA creates a build folder that puts all the assets in there. It also cleans that folder every time it runs so lets do the same:
+Until now we have being using the public and this not really the best idea because any files inside there get minified and that is probably not what you want to do. You would like to keep at least the index.html file non minified so you can edit it and then when we build for production it gets minified and put somewhere else, well that is what CRA does, CRA creates a build folder that puts all the assets in there. It also cleans that folder every time it runs so lets do the same:
 
-// Switch from build / dist
-// Cleaning old assets
+First we need to install a plugin to clean the webpack folder, so open your command line and run `npm install clean-webpack-plugin --save-dev`
 
-// Alternatives, tools (https://createapp.dev/) and resources
-// Conclusion
-// Challenge Review CRA : https://github.com/facebook/create-react-app/blob/c87ab79559e98a5dae2cd0b02477c38ff6113e6a/packages/react-scripts/config/webpack.config.js
+```js{5, 55}
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const TerserJSPlugin = require("terser-webpack-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+
+module.exports = (env) => {
+  const isEnvProduction = env.production
+  return {
+    mode: !isEnvProduction ? "development" : "production",
+    devtool: "source-map",
+    entry: "./src/index",
+    output: {
+      path: __dirname + "/build",
+      publicPath: "/",
+      filename: isEnvProduction
+        ? "static/js/[name].[contenthash].js"
+        : !isEnvProduction && "static/js/bundle.js",
+      chunkFilename: isEnvProduction
+        ? "static/js/[name].[contenthash].chunk.js"
+        : !isEnvProduction && "static/js/[name].chunk.js",
+    },
+    devServer: {
+      contentBase: "./dist",
+      port: "3001",
+    },
+    optimization: {
+      minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    },
+    resolve: {
+      extensions: [".ts", ".tsx", ".jsx", ".js"],
+    },
+    module: {
+      rules: [
+        // Loader has two "required" properties, test & use/loader, test is used to identifer the files the specific loader should transform, in case below babel-loader should look at jsx files.
+        {
+          test: /\.(js|mjs|jsx|ts|tsx)$/,
+          loader: require.resolve("babel-loader"),
+          exclude: /node_modules/,
+          // Options for the plugin
+          options: {
+            presets: [
+              require.resolve("@babel/preset-react"),
+              require.resolve("@babel/preset-typescript"),
+            ],
+          },
+        },
+        {
+          test: /\.css$/,
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
+        },
+      ],
+    },
+    plugins: [
+      new CleanWebpackPlugin(),
+      new MiniCssExtractPlugin({
+        filename: "static/css/[name].[contenthash].css",
+        chunkFilename: "static/css/[id].[contenthash].chunk.css",
+      }),
+      // The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles. This is especially useful for webpack bundles that include a hash in the filename which changes every compilation
+      new HtmlWebpackPlugin({
+        template: "./public/index.html",
+      }),
+    ],
+  }
+}
+```
+
+Run `npm run build` again and cool we are done!, we now have file hashing and we are cleaning up after ourselves like good developers.
+
+## Tools, Alternatives and resources
+
+As we are reaching the end of our webpack series I want to discuss some alternatives to webpack and some more resources to help you on your journey. Lets discuss a tool I found while writing this tutorial and that is available at `https://createapp.dev/`.
+
+This is a super cool build config generator that will generate your webpack config for you, all you have to ddo is click what library you are using, styling and any other optimizations you may want to add. How cool is that!, since you have learned exactly how webpack works you can see what and why this tool generates a certain configuration. If I was starting from webpack stratch again I would probably use something like this but as I said in the first post of this series it is often good to know what these tools are doing under the cover.
+
+### Alternatives
+
+Webpack is not the only bundler out there, there were a few before webpack and there has been some after it here are a few:
+
+- [Parcel](https://parceljs.org/)
+- [Snowpack](https://www.snowpack.dev/)
+- [RomeJS](https://romejs.dev/)
+
+Now that you have a good base in what webpack is doing under the hood you can explore these tools and see what advantages and disadvantages they have when compared to webpack.
+
+## Conclusion
+
+Well that is it, I hope you enjoyed this third and last post in the Getting to know webpack series, i really hope you enjoyed this tutorial and I hope you learned something new. All the code for this tutorial is available on [Github](https://github.com/jaslloyd/webpack-tutorial), I want to leave you with a challenge, all through this post I was mention create react app and how it does it webpack config well my challenge is to go and take a look at its webpack config available [here](https://github.com/facebook/create-react-app/blob/c87ab79559e98a5dae2cd0b02477c38ff6113e6a/packages/react-scripts/config/webpack.config.js). When you first open it looks very complicated but if you followed this tutorial you will start to see familiar patterns, you will also see where CRA differs from our config and thanks to the authors of it there are often comments explaining why. Well, that is all for today
+
+Until next time,
+Jason
