@@ -29,7 +29,7 @@ We are going to dive into each of these concepts over the next few tutorials as 
 
 ### Step 1: Create an empty directory with webpack.config.js and a package.json file
 
-Open up your terminal or command file and type the following (➜ is my terminal prompt so ignore that)
+Open up your terminal or command file and type the following
 
 ```sh
 # Make the tutorial directory
