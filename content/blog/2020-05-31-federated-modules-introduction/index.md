@@ -59,7 +59,7 @@ In this Nav example above we do not depend on any other remotes at the moment bu
 
 Now that we have looked at the Navigation example lets look at a an application that consumes the nav remote...e.g the Homepage
 
-```js home/webpack.config.js
+```js
     // Rest of Webpack Config here...
     new ModuleFederationPlugin({
       name: 'home',
@@ -75,7 +75,7 @@ Now that we have looked at the Navigation example lets look at a an application 
 
 The important part is `remotes`, you can see Home is consuming the navigation/nav federated module and anything that is exported from that is available for important. Adding the remote to the webpack config is the first step, next we have to include the url to remoteEntry file so webpack can download that remote:
 
-```html home/index.html
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -91,7 +91,7 @@ You can see the script tag in the head, at the moment all these modules are loca
 
 Consuming the exposed Header component from Nav is as simple as importing it and using it
 
-```jsx App.jsx
+```jsx
 // Other imports
 import Header from "nav/Header"
 
@@ -114,7 +114,7 @@ Now that we have a good idea of how to use Federated module lets try out exposin
 Earlier I said while home is not exposing anything at the moment we were going to change that. Home has a ProductCarousel component that we would like to use inside our search application so lets do that.
 
 1. Expose the ProductCarousel component inside home/webpack.config.js
-   ```js home/webpack.config.js
+   ```js
     // Rest of Webpack Config here...
     new ModuleFederationPlugin({
       name: 'home',
@@ -133,7 +133,7 @@ Earlier I said while home is not exposing anything at the moment we were going t
 Notice the `exposes` object we are now exposing the ProductCarousel component.
 
 2. Update search/webpack.config.js to include the new remote of home
-   ```js search/webpack.config.js
+   ```js
     // Rest of Webpack Config here...
     new ModuleFederationPlugin({
       name: "search",
@@ -152,7 +152,7 @@ The `remotes` object has been updated to include the home remote module. This wi
 
 3. Update search/public/index.html to include the script tag to point to remoteEntry of home.
 
-```html search/public/index.html
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -169,7 +169,7 @@ The `remotes` object has been updated to include the home remote module. This wi
 
 4. The home remote runs on port 3001 so we add the correct script tag for that. The last step is using the ProductCarousel component.
 
-```jsx search/App.tsx
+```jsx
 // Rest of file here ...
 // Import ProductCarousel from the home remote
 import ProductCarousel from "home/ProductCarousel"

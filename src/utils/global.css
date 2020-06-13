@@ -9,7 +9,12 @@ body.dark {
 }
 
 body.dark a {
-  color: #BD946C
+  color: #bd946c;
+}
+
+body.dark blockquote {
+  color: var(--textNormal);
+  border-left: 0.32813rem solid #bd946c;
 }
 
 body {
