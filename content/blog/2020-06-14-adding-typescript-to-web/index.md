@@ -1,5 +1,5 @@
 ---
-title: "Webpack - How to add Typescript and CSS support | Part 2"
+title: "Getting to know Webpack - How to add Typescript and CSS support | Part 2"
 date: "2020-06-14"
 description: "This is part 2 of exploring the world of webpack, we are going to add typescript and css support, we are also going to learn about webpack plugins"
 ---
@@ -14,7 +14,7 @@ As stated in the previous tutorial, webpack only supports js and json files out 
 
 Open up the webpack.config.js and add support for ts and tsx files:
 
-```js
+```js{9,14,20}
 module.exports = {
   entry: "./src/index",
   output: {
@@ -55,7 +55,7 @@ Once that command is finished you should have a tsconfig.json file in the root o
 
 Lets try compile our first typescript files, in the last tutorial we created `App.jsx` and `index.js`, lets rename them to `App.tsx` and `index.tsx`. Lets add some typescript to `App.tsx` to make sure it compiles:
 
-```tsx
+```tsx{4}
 import React from "react"
 
 const App = () => {
@@ -90,7 +90,7 @@ Each of these loaders do two separate jobs:
 
 Lets update webpack to use the new loaders we just installed:
 
-```js
+```js{24-27}
 module.exports = {
   entry: "./src/index",
   output: {
@@ -136,7 +136,7 @@ body {
 
 Now import it in App.tsx
 
-```tsx
+```tsx{2}
 import React from "react"
 import "./index.css"
 
@@ -172,7 +172,7 @@ Since we are building out our own little version of CRA lets do that as well:
 
 Now update webpack.config.js to now use MiniCssExtractPlugin loader and plugin:
 
-```js
+```js{1,28}
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
@@ -239,7 +239,7 @@ Lets solve our first problem, having to manually run `npm run build` every time 
 
 We need to let webpack now we want to use webpack dev server & HtmlWebpackPlugin so we need to update our webpack.config.js file:
 
-```js
+```js{1,11-14,38-42}
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
