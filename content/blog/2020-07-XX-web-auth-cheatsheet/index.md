@@ -1,6 +1,6 @@
 ---
 title: "Web Authentication and Authorization Cheat sheet"
-date: "2020-06-28"
+date: "2020-07-XX"
 description: "A cheat sheet / reference sheet for Web Authentication and Authorization. Something I wished I had before I started looking into this!"
 ---
 
