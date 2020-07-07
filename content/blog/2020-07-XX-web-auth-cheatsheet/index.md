@@ -1,6 +1,8 @@
-# Web Auth Cheat sheet
-
-A cheat sheet / reference sheet for Web Authentication and Authorization. Something I wished I had before I started looking into this!
+---
+title: "Web Authentication and Authorization Cheat sheet"
+date: "2020-06-28"
+description: "A cheat sheet / reference sheet for Web Authentication and Authorization. Something I wished I had before I started looking into this!"
+---
 
 - Authentication is the process of verifying who a user is.
 - Authorization is the process of verifying what they have access to.
