@@ -1,7 +1,9 @@
 # Web Auth Cheat sheet
 
-- Authentication is the process of verifying who a user is
-- Authorization is the process of verifying what they have access to
+A cheat sheet / reference sheet for Web Authentication and Authorization. Something I wished I had before I started looking into this!
+
+- Authentication is the process of verifying who a user is.
+- Authorization is the process of verifying what they have access to.
 
 ## Terminology
 
@@ -14,6 +16,7 @@
 ## Sessions + JWT
 
 Sessions are usually stored / validated on the server or if there is more than one server they are stored in something like Memcache or Redis i.e it a Stateful form of Authorization.
+
 Session ID are usually sent from the client in a cookie or header, the server looks up that session id and checks if the user has permission to do what they are requesting.
 
 JWT on the other hand is Stateless, it is sent either in the header in form "Bearer XYZ" or could be in a cookie that is sent along to the server, the server reads that token and validates(valid jwt and not expired) if it is valid it allows the request. JWT is stateless because the server doesn't need to know these id a head of time, it is validated when the request comes in. JWT can be secured / encrypted using keys to give an extra layer of security. This also means you won't need something like Redis to manage the sessions because there are none.
@@ -26,12 +29,10 @@ Allows you to connect your application to any identity providers you want to use
 
 OAuth has various different flows/grants for different situations see [here](https://auth0.com/docs/api-auth/which-oauth-flow-to-use) for different use cases from Implicit being least secure to Authorization Code Flow be Most\*.
 
-- Authorization Code Flow has a few different options
-
 #### Authorization Code Flow
 
 - Recommended if your web app sits on a server or you have a BE server that goes along with your web app
-- All communication is done with BE server and not through client browser - There is a variation where first step is done through browser
+- All communication is done with BE server and not through client browser \*There is a variation where first step is done through browser
 
 The OAuth Authorization code redirection flow is:
 
@@ -73,6 +74,13 @@ Every request need to send along the JWT token to the BE server(s) so it can val
     - Requires extra code to manage this in memory
 
 Recommendation - Store it in memory if you can (storing refresh_token in httpOnly cookie), if you cannot do that because of architecture limitations and you can still store use cookies then do that, if you cannot use cookies because you don't have an API gateway or you have many backend services use Local storage.
+
+## Conclusion
+
+I hope that helped clarify some terms and you can use this as a reference sheet for Web Auth. There are no examples in this post since there are plenty of them out there, I wish I had this when I started looking to into this!, there are some other methods that I haven't discussed in this video such as SAML and basic auth but I think I covered the main ones you would run into.
+
+Until next time,
+Jason
 
 ## Resources
 
