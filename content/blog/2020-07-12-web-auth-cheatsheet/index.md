@@ -1,8 +1,10 @@
 ---
 title: "Web Authentication and Authorization Cheat sheet"
-date: "2020-07-XX"
-description: "A cheat sheet / reference sheet for Web Authentication and Authorization. Something I wished I had before I started looking into this!"
+date: "2020-07-12"
+description: "A cheat sheet / reference sheet for Web Authentication and Authorization. Discussing Sessions, JWTs and more"
 ---
+
+Welcome back this post is going to a quick reference for Web Authentication and Authorization specifically discussing Sessions, JWTs and more. Lets get started:
 
 - Authentication is the process of verifying who a user is.
 - Authorization is the process of verifying what they have access to.
@@ -79,7 +81,7 @@ Recommendation - Store it in memory if you can (storing refresh_token in httpOnl
 
 ## Conclusion
 
-I hope that helped clarify some terms and you can use this as a reference sheet for Web Auth. There are no examples in this post since there are plenty of them out there, I wish I had this when I started looking to into this!, there are some other methods that I haven't discussed in this video such as SAML and basic auth but I think I covered the main ones you would run into.
+I hope that helped clarify some terms and you can use this as a reference sheet for Web Auth. There are no examples in this post since there are plenty of them out there, I wish I had this when I started looking to into this!, there are some other methods that I haven't discussed in this video such as SAML and basic auth but I think I covered the main ones you would run into. Check out the resources below!
 
 Until next time,
 Jason
