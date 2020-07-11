@@ -92,7 +92,7 @@ Jason
 
 [Id Tokens & Access Tokens](https://auth0.com/docs/tokens)
 
-[LogRocket JWT Auth](hhttps://blog.logrocket.com/jwt-authentication-best-practices/)
+[LogRocket JWT Auth](https://blog.logrocket.com/jwt-authentication-best-practices/)
 
 [Token Storage](https://auth0.com/docs/tokens/concepts/token-storage)
 
