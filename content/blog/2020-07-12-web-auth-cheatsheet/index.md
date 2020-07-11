@@ -31,7 +31,7 @@ Allows you to connect your application to any identity providers you want to use
 
 ### OAuth Grants
 
-OAuth has various different flows/grants for different situations see [here](https://auth0.com/docs/api-auth/which-oauth-flow-to-use) for different use cases from Implicit being least secure to Authorization Code Flow be Most\*.
+OAuth has various different flows/grants for different situations see [here](https://auth0.com/docs/api-auth/which-oauth-flow-to-use) for different use cases from Implicit being least secure to Authorization Code Flow be most secure.
 
 #### Authorization Code Flow
 
@@ -62,7 +62,7 @@ Every request need to send along the JWT token to the BE server(s) so it can val
 - Cookies
   - Pros:
     - Easy to access via document.cookie
-    - Can be very secure if you use httpOnly and Secure cookies
+    - Can be very secure if you use httpOnly and Secure cookies but has cons
     - Automatically send along with every request (if cookie domain matches client domain)
   - Cons:
     - Storing in a non httpOnly cookie exposes you to CSRF attack
