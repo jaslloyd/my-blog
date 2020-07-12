@@ -1,7 +1,7 @@
 ---
-title: "Web Authentication and Authorization Cheat sheet"
+title: "Web Authentication and Authorization Reference Guide"
 date: "2020-07-12"
-description: "A cheat sheet / reference sheet for Web Authentication and Authorization. Discussing Sessions, JWTs and more"
+description: "A quick reference sheet for Web Authentication and Authorization. Discussing Sessions, JWTs and more"
 ---
 
 Welcome back this post is going to a quick reference for Web Authentication and Authorization specifically discussing Sessions, JWTs and more. Lets get started:
