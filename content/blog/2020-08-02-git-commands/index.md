@@ -1,6 +1,6 @@
 ---
 title: "80/20 of Git commands: All of the commands I have used for 2 years"
-date: "2020-07-28"
+date: "2020-08-02"
 description: A very short post on all the git commands I have used in two years at my current role"
 ---
 
