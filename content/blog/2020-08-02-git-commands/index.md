@@ -1,7 +1,7 @@
 ---
 title: "80/20 of Git commands: All of the commands I have used for 2 years"
 date: "2020-08-02"
-description: A very short post on all the git commands I have used in two years at my current role"
+description: "A very short post on all the git commands I have used in two years at my current role"
 ---
 
 Welcome back, this will be a very short post on all the git commands I have used in two years at my current role. A lot of these I used more than others but as you can see there is not a lot of variety here. One thing I should mention most of the time I don't run these command directly all the basic commands such as pulling, pushing, checkout to other branches are all ran through my editor vscode. The more complicated commands are run on the command line.
