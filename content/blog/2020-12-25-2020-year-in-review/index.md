@@ -21,21 +21,23 @@ Welcome back, earlier in Jan of this year I published a post about my [2020: Sel
 2. Mindset - The New Psychology of Success
 3. 5 Second Rule - Mel Robins
 4. The War of Art - Steven Pressfield
-5. The 5am Club -
+5. The 5am Club - Robin Sharma
 6. Can't Hurt Me - David Goggins
 7. Do the Work - Steven Pressfield
 8. The Decision - Kevin Hart
 9. The 4 hour work week - Tim Ferris (Re-read)
-10. 12 Week Year (Re-read)
-11. How will you measure your life
+10. 12 Week Year (Re-read) - Brian P. Moran
+11. How will you measure your life - Clayton M. Christensen
 12. // TODO
 
 The best book I read this year was ....
 
 **Goal**: Complete at least 30 - 50 Leet Code Questions
-**Outcome**: Not Achieved -
+**Outcome**: Not Achieved - I planned on doing this questions a few every month but I was never able to just sit down and code on them. I did some small side projects which I think I found more enjoyable than the leet code questions. I do plan on trying to do more of these leet code / Algorithm / Challenge type questions just to keep my memory fresh of Data structures and Algorithms.
 
 ## Conclusion
+
+Overall I had 4 main public main goals, I achieved 2 of them and didn't achieve 2 of them (50% success rate), I do think Covid impacted my promotion goal and maybe my leet code goal but instead of making excuses I am going to make a plan to do everything in my control to achieve these and more goals next year. I hope you had a safe and somewhat enjoyable 2020 and you achieved some of your goals.
 
 Until next time
 
