@@ -1,7 +1,7 @@
 ---
 title: "2020 Year in Review"
 date: "2020-12-25"
-description: ""
+description: "How I got on in my Self Development Goals for 2020!"
 ---
 
 Welcome back, earlier in Jan of this year I published a post about my [2020: Self Development Goals](./2020-01-05-2020-self-development-goals/index.md), little did I know just one month later Covid came and we were put in a lock down that is pretty much still ongoing. I hope you are doing well and staying safe, lets discuss how my 2020 went.
