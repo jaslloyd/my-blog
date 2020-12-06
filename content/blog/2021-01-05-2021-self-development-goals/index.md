@@ -21,7 +21,7 @@ Another year is here and it's time for me to write my goals for 2021. This is th
 **Due Date**: 31/12/2020  
 **Next Steps:** **Already started this** I have a few already scheduled for January including this one.
 
-**Goal**: Read
+**Goal**: [Read X amount of Software books, Read X amount of non fiction Books]
 **How it will be measured**:
 **Due Date**:
 **Next Steps:**
