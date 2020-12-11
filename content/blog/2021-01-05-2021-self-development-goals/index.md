@@ -13,7 +13,7 @@ Another year is here and it's time for me to write my goals for 2021. This is th
 
 **Goal**: Promotion to Staff Software Engineer  
 **How it will be measured**: Well I will either be it or not be it at the end of the year.  
-**Due Date:** I want this to be done by at the latest middle of the year July / August  
+**Due Date:** I want this to be done by at the latest middle of the year so around July / August  
 **Next Steps:**
 
 **Goal**: Publish 25 Blog Posts  
@@ -22,9 +22,9 @@ Another year is here and it's time for me to write my goals for 2021. This is th
 **Next Steps:** **Already started this** I have a few already scheduled for January including this one.
 
 **Goal**: [Read X amount of Software books, Read X amount of non fiction Books]
-**How it will be measured**:
+**How it will be measured**: I am looking to write blog posts on some of books I read, the book I am currently reading "Designing Data-Intensive applications".
 **Due Date**:
-**Next Steps:**
+**Next Steps:** Gather a list of books I tend on reading in the next few months.
 
 **Goal**: [Algorithm / Data structures / Problem Solving Goal]
 **How it will be measured**:
