@@ -2,7 +2,7 @@
 title: "2020: Self Development Goals"
 date: "2020-01-05"
 coverImage: "Brown-New-Year-Card.png"
-description: "Discussing my short-term Self Development Goals for 2021."
+description: "Discussing my Self Development Goals for 2021."
 ---
 
 ![Cover Image](./images/Brown-New-Year-Card.png)
@@ -14,7 +14,7 @@ Another year is here and it's time for me to write my goals for 2021. This is th
 **Goal**: Promotion to Staff Software Engineer  
 **How it will be measured**: Well I will either be it or not be it at the end of the year.  
 **Due Date:** I want this to be done by at the latest middle of the year so around July / August  
-**Next Steps:**
+**Next Steps:** Follow the regular promotion process for my company!
 
 **Goal**: Publish 25 Blog Posts  
 **How it will be measured**: As long as I am writing at least 2 posts per month I know I am on track.  
@@ -28,7 +28,7 @@ Another year is here and it's time for me to write my goals for 2021. This is th
 
 **Goal**: [Algorithm / Data structures / Problem Solving Goal]
 **How it will be measured**:
-**Due Date**: 30/11/2020  
+**Due Date**:  
 **Next Steps:**
 
 ## Conclusion
