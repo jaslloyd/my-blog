@@ -21,7 +21,7 @@ Another year is here and it's time for me to write my goals for 2021. This is th
 **Due Date**: December 2021
 **Next Steps:** **Already started this** I have a few already scheduled for January including this one.
 
-**Goal**: [Read X amount of Software books, Read X amount of non fiction Books]
+**Goal**: Read 4 amount of Software books, Read 6 other non fiction Books
 **How it will be measured**: I am looking to write blog posts on some of books I read, the book I am currently reading "Designing Data-Intensive applications".
 **Due Date**: December 2021
 **Next Steps:** Gather a list of books I tend on reading in the next few months.
