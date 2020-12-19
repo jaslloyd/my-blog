@@ -55,6 +55,8 @@ Could we solve this using constant space? O(1) i.e No other data structures the 
 
 ![Two Sum Problem](./images/two-sum-ii.png)
 
+[Link](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+
 ## Two Sum II Solution
 
 ### Time / Space Complexity
