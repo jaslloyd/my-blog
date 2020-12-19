@@ -8,8 +8,22 @@ Welcome back, one of my Self Development Goals for 2021 is "Complete at least 25
 
 ## Two Sum Problem
 
+![Two Sum Problem](./images/two-sum-problem.png)
+
 ## Two Sum Solution
+
+### Time / Space Complexity
+
+Time: O(n)
+Why: At worst we need go through each element of the array to find two matching elements, hash table look ups are O(1) so our complexity is O(n)
+
+Space: O(n)
+Why: As we are using a hash table to store every each element of the array (to check if can find target - currentNum is in Hashmap) the space is O(n) because at worst we have to store every element.
 
 ## Two Sum II Problem
 
+![Two Sum Problem](./images/two-sum-ii.png)
+
 ## Two Sum II Solution
+
+### Time / Space Complexity
