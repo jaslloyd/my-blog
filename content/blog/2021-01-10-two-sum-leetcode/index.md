@@ -12,6 +12,10 @@ Welcome back, one of my Self Development Goals for 2021 is "Complete at least 25
 
 ## Two Sum Solution
 
+There are a few ways to approach this problem we could Bruce force the solution by having two loops, for each number in list check against rest of numbers to see if matches the target. This solution would work but its time complexity is O(n^2), can we do better?
+
+We can in fact, we can use additional space to reduce the overall time complexity. The idea is: as we go through each number, check if target - num already exist in hashmap(meaning it exists in the array) we can return that value & index as well as the current index. If we cannot find the value in the array we can add it along with the index (hash_map[num] = i).
+
 ### Time / Space Complexity
 
 Time: O(n)
@@ -19,6 +23,8 @@ Why: At worst we need go through each element of the array to find two matching 
 
 Space: O(n)
 Why: As we are using a hash table to store every each element of the array (to check if can find target - currentNum is in Hashmap) the space is O(n) because at worst we have to store every element.
+
+Could we solve this using constant space? O(1) i.e No other data structures the answer is yes! and I will show you that by answering another leet code question Two Sum II. Both problems can solved using a hashmap but they both can also be solved via another way which will give us O(1) space.
 
 ## Two Sum II Problem
 
