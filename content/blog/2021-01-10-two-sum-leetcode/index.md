@@ -59,4 +59,37 @@ Could we solve this using constant space? O(1) i.e No other data structures the 
 
 ## Two Sum II Solution
 
+```py
+class Solution(object):
+    def twoSum(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+
+        [2, 7, 11, 15]
+         ^         ^
+
+        Time Complexity: O(N)
+        Space Complexity: O(1)
+        """
+
+        l = 0
+        r = len(numbers) - 1
+
+        while l < r:
+            # 15 + 2 = 17 > 9
+            # 11 + 2 = 13 > 9
+            # 7 + 2 = 9 return [0, 1]
+            targetVal = numbers[r] + numbers[l]
+            if targetVal == target:
+                return [l+1, r+1]
+            elif targetVal > target:
+                r = r -1
+            elif targetVal < target:
+                l = l + 1
+
+        return [-1, -1]
+```
+
 ### Time / Space Complexity
