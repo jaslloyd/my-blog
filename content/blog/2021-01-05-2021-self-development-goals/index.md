@@ -26,10 +26,11 @@ Another year is here and it's time for me to write my goals for 2021. This is th
 **Due Date**: December 2021
 **Next Steps:** Gather a list of books I tend on reading in the next few months.
 
-**Goal**: [Algorithm / Data structures / Problem Solving Goal]
-**How it will be measured**:
+**Goal**: Complete at least 25 - 50 Leetcode Questions
+**How it will be measured**: Leetcode shows how many problems you have solved at the end of the year I can take this number.
 **Due Date**: December 2021
-**Next Steps:**
+**Next Steps:** Already have account setup with some problems.
+**Special Note**: I am doing this because I feel like the skills that Leet Code questions test are not tested everyday development but they can teach you a lot about programming.
 
 ## Conclusion
 
