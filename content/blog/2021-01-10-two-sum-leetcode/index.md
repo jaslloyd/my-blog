@@ -10,11 +10,36 @@ Welcome back, one of my Self Development Goals for 2021 is "Complete at least 25
 
 ![Two Sum Problem](./images/two-sum-problem.png)
 
+[Link](https://leetcode.com/problems/two-sum/)
+
 ## Two Sum Solution
 
 There are a few ways to approach this problem we could Bruce force the solution by having two loops, for each number in list check against rest of numbers to see if matches the target. This solution would work but its time complexity is O(n^2), can we do better?
 
 We can in fact, we can use additional space to reduce the overall time complexity. The idea is: as we go through each number, check if target - num already exist in hashmap(meaning it exists in the array) we can return that value & index as well as the current index. If we cannot find the value in the array we can add it along with the index (hash_map[num] = i).
+
+```py
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        hash_map = {};
+        # Go through each element, minus that element from the target, if that new target exists return hash_map[new_target], currentIndex, if its not in the hashmap add it (Key = Number), value = index
+        for i, num in enumerate(nums):
+            n = target - num
+            if n in hash_map:
+                return [hash_map[n], i]
+            else:
+                hash_map[num] = i;
+
+# Input: nums = [2,7,11,15], target = 9
+# Output: [0,1]
+#  Output: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+```
 
 ### Time / Space Complexity
 
