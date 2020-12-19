@@ -1,5 +1,5 @@
 ---
-title: "Two Sum Leetcode"
+title: "Leetcode Two Sum & Two Sum II"
 date: "2021-01-10"
-description: "Leetcode Goal starting now 1 / 25, Discussing Two Sum"
+description: "Leetcode Goal starting now 2 / 25, Discussing Two Sum and Two Sum II"
 ---
