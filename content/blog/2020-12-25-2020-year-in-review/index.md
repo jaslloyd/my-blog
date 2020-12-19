@@ -28,7 +28,7 @@ Welcome back, earlier in January of this year I published a post about my [2020:
 9. The 4 hour work week - Tim Ferris (Re-read)
 10. 12 Week Year (Re-read) - Brian P. Moran
 11. How will you measure your life - Clayton M. Christensen
-12. Master - Robert Greene
+12. Mastery - Robert Greene
 
 **Goal**: Complete at least 30 - 50 Leet Code Questions
 **Outcome**: Not Achieved - I planned on doing a few questions every month but I was never able to just sit down and code on them. I did some small side projects which I think I found more enjoyable than the leet code questions. I do plan on trying to do more of these leet code / Algorithm / Challenge type questions just to keep my memory fresh of Data structures and Algorithms.
