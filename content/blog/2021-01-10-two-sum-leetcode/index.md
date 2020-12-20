@@ -100,6 +100,7 @@ class Solution(object):
             elif targetVal < target:
                 l = l + 1
 
+        # Not strictly required as "You may assume that each input would have exactly one solution" just good practice
         return [-1, -1]
 ```
 
