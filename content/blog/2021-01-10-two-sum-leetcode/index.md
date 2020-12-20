@@ -66,7 +66,7 @@ A very important part of the problem statement "already sorted in ascending orde
 - Check if numbers[leftPointer] + numbers[rightPointer] = target
 - If the numbers[leftPointer] + numbers[rightPointer] > target we know we need a smaller value so we can "shift" the right pointer to the left. As array is sorted values lesser than our current value are on the left
 - If the numbers[leftPointer] + numbers[rightPointer] < target we know we need a bigger value so we can "shift" the left pointer to the pointer. As array is sorted values bigger than our current value are on the right
-- If we find the target return the indexes + 1
+- If we find the target return the indexes of left and right pointer + 1.
 
 This approach is know as a Two pointer solution, it is a very useful technique and it is used quite a lot in array problems.
 
