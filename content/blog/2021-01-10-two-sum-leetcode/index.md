@@ -59,6 +59,17 @@ Could we solve this using constant space? O(1) i.e No other data structures the 
 
 ## Two Sum II Solution
 
+A very important part of the problem statement "already sorted in ascending order" because of this we know smaller values are on the left of array and bigger values are on the right. We can approach a solution like so:
+
+- Place a pointer at the start and the end of the array
+- While the left and right pointer are not in the same place
+- Check if numbers[leftPointer] + numbers[rightPointer] = target
+- If the numbers[leftPointer] + numbers[rightPointer] > target we know we need a smaller value so we can "shift" the right pointer to the left. As array is sorted values lesser than our current value are on the left
+- If the numbers[leftPointer] + numbers[rightPointer] < target we know we need a bigger value so we can "shift" the left pointer to the pointer. As array is sorted values bigger than our current value are on the right
+- If we find the target return the indexes + 1
+
+This approach is know as a Two pointer solution, it is a very useful technique and it is used quite a lot in array problems.
+
 ```py
 class Solution(object):
     def twoSum(self, numbers, target):
@@ -81,7 +92,7 @@ class Solution(object):
             # 15 + 2 = 17 > 9
             # 11 + 2 = 13 > 9
             # 7 + 2 = 9 return [0, 1]
-            targetVal = numbers[r] + numbers[l]
+            targetVal = numbers[l] + numbers[r]
             if targetVal == target:
                 return [l+1, r+1]
             elif targetVal > target:
@@ -102,4 +113,8 @@ Why: Previously we were using a hashmap which at worst we would have had to stor
 
 ## Conclusion
 
-<!-- TODO: -->
+I hope you enjoyed this first post on solving some Leetcode problems, there are a lot of articles / videos explaining this problem, I feel like sometimes these skip over important details which is another reason why I wanted to write about them. Anyway, that is 2 / 25 for my yearly goal done! now onto the rest, i hope you enjoyed this post!
+
+Until next time
+
+Jason
