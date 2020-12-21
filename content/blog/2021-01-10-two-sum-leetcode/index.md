@@ -73,7 +73,7 @@ This approach is know as a Two pointer solution, it is a very useful technique a
 
 ```py
 class Solution(object):
-    def twoSum(self, numbers, target):
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         """
         :type numbers: List[int]
         :type target: int
