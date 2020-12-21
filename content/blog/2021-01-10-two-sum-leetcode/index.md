@@ -114,7 +114,7 @@ Why: Previously we were using a hashmap which at worst we would have had to stor
 
 ## Conclusion
 
-I hope you enjoyed this first post on solving some Leetcode problems, there are a lot of articles / videos explaining this problem, I feel like sometimes these skip over important details which is another reason why I wanted to write about them. Anyway, that is 2 / 25 for my yearly goal done! now onto the rest, i hope you enjoyed this post!
+I hope you enjoyed this first post on solving Leetcode problems, there are a lot of articles / videos explaining this problem, I feel like sometimes these skip over important details which is another reason why I wanted to write about them. Anyway, that is 2 / 25 for my yearly goal done! now onto the rest, i hope you enjoyed this post!
 
 Until next time
 
