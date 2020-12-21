@@ -107,9 +107,11 @@ class Solution(object):
 ### Time / Space Complexity
 
 Time: O(n)
+
 Why: At worst we need go through each element of the array to find two matching elements, hash table look ups are O(1) so our complexity is O(n)
 
 Space: O(1)
+
 Why: Previously we were using a hashmap which at worst we would have had to store N elements so space was O(n). Now that we not longer need the hashmap and we are just using pointers the space becomes O(1)
 
 ## Conclusion
