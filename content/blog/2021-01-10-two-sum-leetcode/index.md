@@ -19,21 +19,22 @@ There are a few ways to approach this problem we could Bruce force the solution 
 We can, we can use additional space to reduce the overall time complexity. The idea is: as we go through each number, check if target - currentNum already exist in hashmap(meaning it exists in the array) we can return that value & index as well as the current index. If we cannot find the value in the array we can add it along with the index (hash_map[num] = i).
 
 ```py
-class Solution(object):
-    def twoSum(self, nums, target):
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         """
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
         """
         hash_map = {};
-        # Go through each element, minus that element from the target, if that new target exists return hash_map[new_target], currentIndex, if its not in the hashmap add it (Key = Number), value = index
+
         for i, num in enumerate(nums):
             n = target - num
             if n in hash_map:
                 return [hash_map[n], i]
             else:
                 hash_map[num] = i;
+
 
 # Input: nums = [2,7,11,15], target = 9
 # Output: [0,1]
