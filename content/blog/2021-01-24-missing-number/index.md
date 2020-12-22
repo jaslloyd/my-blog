@@ -4,13 +4,13 @@ date: "2021-01-17"
 description: "Leetcode Goal 4 / 25, Discussing and solving Missing Number"
 ---
 
-Welcome back, part of my Self Development Goals for 2021 is "Complete at least 25 - 50 Leetcode Questions", today we are going to discuss and solve [Leetcode 217 Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
+Welcome back, part of my Self Development Goals for 2021 is "Complete at least 25 - 50 Leetcode Questions", today we are going to discuss and solve [Leetcode 268 Missing Numbers](https://leetcode.com/problems/missing-number)
 
-## Contains Duplicate Problem
+## Missing Number Problem
 
-![Contains Duplicate Problem](./images/contains-duplicate.png)
+![Missing Number Problem](./images/missing-number.png)
 
-## Contains Duplicate Solution
+## Missing Number Solution
 
 As with every leetcode problem there are various ways to solve this, we could always brute force with a double for loop checking each number but that would give us a O(n^2) time complexity. Can we do better? Of course we can, we need to find out if the current number we are on has already been seen, if it has return True. How can we keep track of values we have seen so far and how can we lookup them values efficiently?...We could use a Hashmap / Dict to store every number we see, a hashmap also provides an O(1) lookup which is instant. So plan is:
 
