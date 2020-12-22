@@ -93,7 +93,7 @@ Why: At worst we need go through each element of the array to find a duplicate e
 
 Space: O(1)
 
-Why: We are no longer using extra space since we are using counters now
+Why: We are no longer using extra space since we are using counters now so its O(1)
 
 ## Conclusion
 
