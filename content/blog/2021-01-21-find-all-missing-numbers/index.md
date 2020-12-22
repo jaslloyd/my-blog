@@ -1,7 +1,7 @@
 ---
 title: "Leetcode 448 Find All Numbers Disappeared in an Array"
 date: "2021-01-21"
-description: "Leetcode Goal 5 / 25, Discussing and solving Missing Number"
+description: "Leetcode Goal 5 / 25, Discussing and solving Find All Numbers Disappeared in an Array"
 ---
 
 Welcome back, part of my Self Development Goals for 2021 is "Complete at least 25 - 50 Leetcode Questions", today we are going to discuss and solve [Leetcode Leetcode 448 Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array)
