@@ -14,7 +14,13 @@ Welcome back, part of my Self Development Goals for 2021 is "Complete at least 2
 
 As with every leetcode problem there are various ways to solve this, we will be discussing two ways of solving this problem. Firstly we will solve it with O(n) time and space complexity then we will see if we can improve it by using no extra space i.e solving it in O(1) space.
 
-// Add details
+\# Pseudocode
+
+```
+    1. Create a set with the current unique numbers in the array
+    2. Go through each number from 0...n+1
+    3. If number not in set then return it
+```
 
 ```py
 class Solution:
@@ -22,18 +28,6 @@ class Solution:
         """
         :type nums: List[int]
         :rtype: int
-        """
-
-        """
-        Solution:
-        1. Create a set with the current unique numbers in the array
-        2. Go through each number from 0...n
-        3. If number not in set then return it
-
-        Time / Space complexity
-        - Time: O(n + n) = O(n): O(Cost of creating set + cost of loop)
-        - Set/Hashmap lookup is O(1)
-        - Space: O(n)
         """
 
         num_set = set(nums)
@@ -47,7 +41,7 @@ class Solution:
 
 ### Time / Space Complexity
 
-Time: O(n)
+Time: O(n + n) = O(n): O(Cost of creating set + cost of loop), Set/Hashmap lookup is O(1)
 
 Why: At worst we need go through each element of the array to find a duplicate element, hash table look ups are O(1) so our complexity is O(n)
 
@@ -56,6 +50,8 @@ Space: O(n)
 Why: As we are using a set to store every each element of the array the space is O(n) because at worst we have to store every element.
 
 ## Missing Number Solution 2
+
+Lets improve our space from O(n) to O(1), we know our array is meant to contain from 0...n, what if we added up all the numbers that are suppose to be in the array and compared that to what we actual have in the array...we find the missing number! e.g Lets say we have [3, 0, 1] so the total of current array is 3 + 0 + 1 = 4, the sum of the indexes are 0 + 1 + 2 + 3(len(n)) = 6, 6 - 4 = 2 the missing number!
 
 ```py
 class Solution:
