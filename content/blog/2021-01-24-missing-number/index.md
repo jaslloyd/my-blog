@@ -10,38 +10,39 @@ Welcome back, part of my Self Development Goals for 2021 is "Complete at least 2
 
 ![Missing Number Problem](./images/missing-number.png)
 
-## Missing Number Solution
+## Missing Number Solution 1
 
-As with every leetcode problem there are various ways to solve this, we could always brute force with a double for loop checking each number but that would give us a O(n^2) time complexity. Can we do better? Of course we can, we need to find out if the current number we are on has already been seen, if it has return True. How can we keep track of values we have seen so far and how can we lookup them values efficiently?...We could use a Hashmap / Dict to store every number we see, a hashmap also provides an O(1) lookup which is instant. So plan is:
+As with every leetcode problem there are various ways to solve this, we will be discussing two ways of solving this problem. Firstly we will solve it with O(n) time and space complexity then we will see if we can improve it by using no extra space i.e solving it in O(1) space.
 
-\# Pseudocode
-
-```
-create hashmap to store values seen
-    Loop through every number in list
-        if currentNum is in hashmap we have found duplicate so return true
-        else currentNum is not in hashmap store the number has the key in the 5. hashmap and the value can be anything
-
-If we get to the end of the loop without returning we know the list has no duplicates so return false.
-
-```
+// Add details
 
 ```py
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    def missingNumber(self, nums: List[int]) -> int:
         """
         :type nums: List[int]
-        :rtype: bool
+        :rtype: int
         """
-        num_dict = {}
 
-        for num in nums:
-            if num in num_dict:
-                return True
-            else:
-                num_dict[num] = num
+        """
+        Solution:
+        1. Create a set with the current unique numbers in the array
+        2. Go through each number from 0...n
+        3. If number not in set then return it
 
-        return False
+        Time / Space complexity
+        - Time: O(n + n) = O(n): O(Cost of creating set + cost of loop)
+        - Set/Hashmap lookup is O(1)
+        - Space: O(n)
+        """
+
+        num_set = set(nums)
+
+        n = len(nums) + 1
+        for number in range(n):
+            if number not in num_set:
+                return number
+
 ```
 
 ### Time / Space Complexity
@@ -52,11 +53,55 @@ Why: At worst we need go through each element of the array to find a duplicate e
 
 Space: O(n)
 
-Why: As we are using a hash table to store every each element of the array the space is O(n) because at worst we have to store every element (if there were no duplicates)
+Why: As we are using a set to store every each element of the array the space is O(n) because at worst we have to store every element.
+
+## Missing Number Solution 2
+
+```py
+class Solution:
+   def missingNumber(self, nums: List[int]) -> int:
+       """
+       :type nums: List[int]
+       :rtype: int
+
+       O(1) solution
+
+       Solution: Add up numbers in array, add up indexes of array
+       Sum of indexes - Sum of numbers = Missing number
+
+       [3, 0, 1]
+        0. 1  2
+       sumWithIndex = 3 + 0 + 1 + 2 = 6
+       actualCursum = 0 + 3 + 0 + 1 = 4
+       sumWithIndex - actualCursum = 2
+
+       """
+
+       # Start sumWithIndex on length of array because its everything in array + last index as its from 0..N
+       sumWithIndex = len(nums)
+       actualCurSum = 0;
+
+
+       for i, num in enumerate(nums):
+           sumWithIndex = sumWithIndex + i
+           actualCurSum = actualCurSum + num
+
+       return sumWithIndex - actualCurSum
+```
+
+### Time / Space Complexity
+
+Time: O(n)
+
+Why: At worst we need go through each element of the array to find a duplicate element, hash table look ups are O(1) so our complexity is O(n)
+
+Space: O(1)
+
+Why: We are no longer using extra space since we are using counters now
 
 ## Conclusion
 
-I hope you enjoyed this second post on solving some Leetcode problems, Anyway, that is 3 / 25 for my yearly goal done! now onto the rest, i hope you enjoyed this post!
+I hope you enjoyed this second post on solving some Leetcode problems, Anyway, that is 4 / 25 for my yearly goal done! now onto the rest, i hope you enjoyed this post!
 
 Until next time
 
