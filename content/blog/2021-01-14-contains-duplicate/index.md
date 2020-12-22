@@ -1,6 +1,6 @@
 ---
 title: "Leetcode 217 Contains Duplicate"
-date: "2021-01-17"
+date: "2021-01-14"
 description: "Leetcode Goal starting now 3 / 25, Discussing contains duplicate"
 ---
 
