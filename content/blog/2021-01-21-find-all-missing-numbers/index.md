@@ -24,19 +24,41 @@ As with every leetcode problem there are various ways to solve this, we will be 
 
 ```py
 class Solution:
-    def missingNumber(self, nums: List[int]) -> int:
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        # Solution 1:
+        #   Generate hashmap of 1..n
+        #   Mark each number in hashmap as "seen"
+        #   Find values in hashmap that are 0 and return it
+        # Time Complexity: O(n)
+        # Space Complexity: O(n)
 
-        num_set = set(nums)
+        # Solution 2:
+        #   Sort list O(n log n)
+        #   check index + 1 = cur if not then it missing
+        # Time Complexity: O(n log n)
+        # Space Complexity: O(n)
 
-        n = len(nums) + 1
-        for number in range(n):
-            if number not in num_set:
-                return number
+        # Solution 3:
+        #   for all numbers in array
+        #       Each number is treated as index (-1)
+        #       Mark that index in the array as "seen" (add a -)
+        #   Any positive indexes left will be numbers missing
+        # Time Complexity: O(n)
+        # Space Complexity: O(1)
 
+        for i, num in enumerate(nums):
+            # real index num - 1
+            rIndex = abs(num) - 1
+            # Take the value at that index and make it negative
+            nums[rIndex] = abs(nums[rIndex]) * -1
+
+        return_list = []
+        # Any numbers that are positive add index + 1 them return list
+        for i,num in enumerate(nums):
+            if num > 0:
+                return_list.append(i + 1)
+
+        return return_list
 ```
 
 ### Time / Space Complexity
@@ -48,52 +70,6 @@ Why: At worst we need go through each element of the array to find a duplicate e
 Space: O(n)
 
 Why: As we are using a set to store every each element of the array the space is O(n) because at worst we have to store every element.
-
-## Find All Numbers Disappeared in an Array Solution 2
-
-Lets improve our space from O(n) to O(1), we know our array is meant to contain from 0...n, what if we added up all the numbers that are suppose to be in the array and compared that to what we actual have in the array...we find the missing number! e.g Lets say we have [3, 0, 1] so the total of current array is 3 + 0 + 1 = 4, the sum of the indexes are 0 + 1 + 2 + 3(len(n)) = 6, 6 - 4 = 2 the missing number!
-
-```py
-class Solution:
-   def missingNumber(self, nums: List[int]) -> int:
-       """
-       :type nums: List[int]
-       :rtype: int
-
-       O(1) solution
-
-       Solution: Add up numbers in array, add up indexes of array
-       Sum of indexes - Sum of numbers = Missing number
-
-       [3, 0, 1]
-        0. 1  2
-       sumWithIndex = 3 + 0 + 1 + 2 = 6
-       actualCursum = 0 + 3 + 0 + 1 = 4
-       sumWithIndex - actualCursum = 2
-
-       """
-
-       # Start sumWithIndex on length of array because its everything in array + last index as its from 0..N
-       sumWithIndex = len(nums)
-       actualCurSum = 0;
-
-
-       for i, num in enumerate(nums):
-           sumWithIndex = sumWithIndex + i
-           actualCurSum = actualCurSum + num
-
-       return sumWithIndex - actualCurSum
-```
-
-### Time / Space Complexity
-
-Time: O(n)
-
-Why: At worst we need go through each element of the array to find a duplicate element, hash table look ups are O(1) so our complexity is O(n)
-
-Space: O(1)
-
-Why: We are no longer using extra space since we are using counters now so its O(1)
 
 ## Conclusion
 
