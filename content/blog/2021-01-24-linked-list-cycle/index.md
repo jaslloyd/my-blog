@@ -8,6 +8,8 @@ Welcome back, part of my Self Development Goals for 2021 is "Complete at least 2
 
 ## Problem
 
+![Linked List Cycle](./images/linked-list-cycle.png)
+
 ## Solution
 
 ## Time / Space Complexity
