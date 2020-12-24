@@ -16,8 +16,8 @@ Another year is here and it's time for me to write my goals for 2021. This is th
 **Due Date:** I want this to be done by at the latest middle of the year so around July / August  
 **Next Steps:** Follow the regular promotion process for my company!
 
-**Goal**: Publish 25 Blog Posts  
-**How it will be measured**: As long as I am writing at least 2 posts per month I know I am on track.  
+**Goal**: Publish 35 Blog Posts  
+**How it will be measured**: As long as I am writing at least 3 posts per month I know I am on track.  
 **Due Date**: December 2021
 **Next Steps:** **Already started this** I have a few already scheduled for January including this one.
 
