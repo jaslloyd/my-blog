@@ -12,6 +12,8 @@ Welcome back, part of my Self Development Goals for 2021 is "Complete at least 2
 
 ## Solution
 
+There are two mains ways to approach this, one using extra space O(n) and a better solution using constant space O(1).
+
 ## Time / Space Complexity
 
 ## Conclusion
