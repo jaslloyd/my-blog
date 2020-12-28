@@ -12,9 +12,9 @@ Welcome back, part of my Self Development Goals for 2021 is "Complete at least 2
 
 ## Solution
 
-There are two mains ways to approach this, one using extra space O(n) and a better solution using constant space O(1). We could use a hashmap to store each value then has we go through each node check if its already in the hashmap if it is it contains a cycle. This uses extra space so can we do better? Yes we can we can use two pointers!, if you have followed this leetcode series so far we know we have seen this two pointer technique before so lets discuss it.
+There are two mains ways to approach this, one using extra space O(n) and a better solution using constant space O(1). We could use a array to store each value then has we go through each node then at end take the middle node arr[len(arr) / 2]. This uses extra space so can we do better? Yes we can we can use two pointers!, if you have followed this leetcode series so far we know we have seen this two pointer technique before so lets discuss it.
 
-We will use a fast and a slow pointer, slow will start at head, fast will start one ahead of slow, for every step the slow pointer takes, fast will take two, if there is a cycle eventually the fast pointer will pass the slow pointer if there is a cycle (as its moving two times faster). If at any point fast becomes null we know we do not have a cycle in our linked list and we can return false.
+We will use a fast and a slow pointer, slow an fast will start at the head, for every step the slow pointer takes, fast will take two, since fast transverses twice as fast as slow when fast reaches the end of the list slow will be around the middle. Our logic will be simple while fast is not None/null move the pointers, when fast or fast.next gets to null we have slow should be pointing to middle of list so return slow.
 
 ```py
 # Definition for singly-linked list.
@@ -41,9 +41,9 @@ class Solution:
 
 ## Time / Space Complexity
 
-Time: O(N + K) (full length + time to catchup with slow) = O(N)
+Time: O(N) = O(N)
 
-Why: At worst we need go through each element of the linked list (until we get to a None/Null pointer).
+Why: We need go through each element of the linked list (until we get to a None/Null pointer).
 
 Space: O(1)
 
