@@ -12,6 +12,8 @@ Welcome back, part of my Self Development Goals for 2021 is "Complete at least 2
 
 ## Solution
 
+The solution while rather simple can be hard to get your head around because it involves moving "pointers". The idea is we reverse in place by storing a temporary reference to the next node, then pointing the next node at the prev value, setting prev to current and setting next to temporary next node. Keep doing this until we reach the end of the list. This results in a linked list that is reversed. The new head of the list will be the last "prev" node so we can return that.
+
 ```py
 # Definition for singly-linked list.
 # class ListNode:
@@ -39,13 +41,13 @@ class Solution:
 
 ## Time / Space Complexity
 
-Time: O(N) = O(N)
+Time: O(N)
 
-Why: We need go through each element of the linked list (until we get to a None/Null pointer).
+Why: We need go through each element of the linked list and reverse it
 
 Space: O(1)
 
-Why: Since we are switch pointers and using a prev variable it is constant space.
+Why: Since we are switching pointers in place we are using constant space
 
 ## Conclusion
 
