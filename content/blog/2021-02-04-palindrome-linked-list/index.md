@@ -10,7 +10,7 @@ Welcome back, part of my Self Development Goals for 2021 is "Complete at least 2
 
 ![Palindrome Linked List](./images/palindrome-linked-list.png)
 
-## Solution
+## Extra space O(n) Solution
 
 <!-- TODO -->
 
@@ -21,7 +21,7 @@ Welcome back, part of my Self Development Goals for 2021 is "Complete at least 2
 #         self.val = val
 #         self.next = next
 class Solution:
-    def isPalindromeExtraSpace(self, head: ListNode) -> bool:
+    def isPalindrome(self, head: ListNode) -> bool:
         """
         :type head: ListNode
         :rtype: bool
@@ -94,6 +94,57 @@ class Solution:
 
         return prev
 
+```
+
+## Constant Space O(1) Solution
+
+```py
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def isPalindrome(self, head: ListNode) -> bool:
+
+        if head == None:
+            return True
+
+        slow = fast = head
+
+
+        # Find middle of list
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+
+        # Repoint fast to head
+        fast = head
+        # Reverse from slow to end
+        slow = self.reverse(slow)
+
+        # Since we have reversed the 2nd part of the linked list, we can now go through each node and compare slow and fast values, fast will point to start -> middle, slow will point from middle to end (reversed)
+
+        while slow != None:
+            if slow.val != fast.val:
+                return False
+
+            slow = slow.next
+            fast = fast.next
+
+        return True
+
+
+    def reverse(self, currentNode: ListNode):
+        prev = None
+        while currentNode != None:
+            nextNode = currentNode.next
+            currentNode.next = prev
+            prev = currentNode
+            currentNode = nextNode
+
+        return prev
 ```
 
 ## Time / Space Complexity
