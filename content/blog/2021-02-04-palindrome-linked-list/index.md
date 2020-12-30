@@ -66,18 +66,18 @@ Why: We are storing each value in an array so the space is O(N)
 
 ## Constant Space O(1) Solution
 
-The constant space solution is a bit more difficult to understand, "pointers" can be hard to get your head around at first but the more you use them the easier it becomes. To check if a Linked list is a palindrome in place it requires a bit of thinking...lets start with how would we check if an array or a string is a palindrome, from the solution above we know we would have a pointer at the start and at end of the string / list and moving the pointers backwards and forward checking if they are equal. Can we do the same thing in a linked list? Well the main problem with a singly-linked list is that we don't have a way to move the pointer "back" to check if each value is equal (at least without a doubly linked list) so what can we do?
+The constant space solution is a bit more difficult to understand, "pointers" can be hard to get your head around at first but the more you use them the easier it becomes. To check if a Linked list is a palindrome in place it requires a bit of thinking...lets start with how would we check if an array or a string is a palindrome, from the solution above we know we would have a pointer at the start and at end of the string / list and moving the pointers backwards and forward checking if they are equal. Can we do the same thing in a linked list? Well the main problem with a singly-linked list is that we don't have a way to move the pointer "back" (unlike an array) to check if each value is equal (at least without a doubly linked list) so what can we do?
 
 What if we could somehow reverse only the second half of the list? Imagine you have a list like: 1 -> 2 -> 3 -> 2 -> 1 and we could somehow reverse the 2nd half to look like:
 1st half: 1 -> 2 -> 3
 2nd half: 1 -> 2 -> 3 (now reversed)
 
-Then we could have two pointers start now at the start of each half and compare them! If you have been following this series of blog posts so far this solution will require us to revisit back two of them:
+Then we could have two pointers at the start of each half and compare them! If you have been following this series of blog posts so far this solution will require us to revisit back two of them:
 
 [Find Middle of Linked List](TBA)
 [Reverse Linked list](TBA)
 
-The idea is, we find the middle of the linked list, we take the pointer pointing at the middle of the linked list and reverse everything from there. Once we have the reversed 2nd half we can transfer the halfs with two pointers and compare at each point. If at any point they are not equal we can say it is not a palindrome.
+The idea is, we find the middle of the linked list, we take the pointer pointing at the middle of the linked list and reverse everything from there. Once we have the reversed 2nd half we can traverse the half's with two pointers and compare at each point. If at any point they are not equal we can say it is not a palindrome.
 
 ```py
 # Definition for singly-linked list.
