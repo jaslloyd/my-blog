@@ -53,11 +53,11 @@ class Solution:
 
 Time: O(N + N) = O(N)
 
-Why: We need go through each element of the linked list and add it to an array then go through each element of the new array again to check if its a palindrome so its O(n + n) which is O(n)
+Why: TBA
 
-Space: O(N)
+Space: O(1)
 
-Why: We are storing each value in an array so the space is O(N)
+Why: We are just switching pointers to remove elements so its constant space.
 
 ## Conclusion
 
