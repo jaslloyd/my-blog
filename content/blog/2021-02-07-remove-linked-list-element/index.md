@@ -12,6 +12,12 @@ Welcome back, part of my Self Development Goals for 2021 is "Complete at least 2
 
 ## Solution
 
+To solve this we could append each of the nodes that don't match the val to another list and then return that list as the new list and that would work. However, can we solve this without using an another list / extra space? Yep we can, as with every algorithm question it is important to read each line carefully, this linked list is already sorted...why would the question say that? or than to give you a clue...it means in theory we can check the next node to see if its value matches the value to remove and if it does we change the next pointer of the previous value to point already thereby "deleting the node".
+
+The idea will be, transverse the linked list check if .next.val === valToRemove, if it does change .next = .next.next (thereby deleting the node in-between). If it doesn't match the value we can advance the current pointer by one.
+
+There is a subtle edge case you need to watch out for which is when the first node is the node to delete, you could add a bunch of extra if statements to check for this edge case or else you can just use a "dummy node". Dummy nodes are common in linked list problems when you need to remove elements, the idea is the new head of the list will be the dummy node(head = dummy), while the dummy.next != null transverse the list checking if we need to remove the node. When we are at the end of the list we return the list without the dummy element which would be head.next (since head points at dummy)
+
 ```py
 # Definition for singly-linked list.
 # class ListNode:
@@ -46,7 +52,7 @@ class Solution:
 
 Time: O(N)
 
-Why: TBA
+Why: We need to transverse the entire linked list in order to remove every element that matches the value.
 
 Space: O(1)
 
