@@ -12,7 +12,7 @@ Welcome back, part of my Self Development Goals for 2021 is "Complete at least 2
 
 ## Solution
 
-To solve this we could append each of the nodes that don't match the val to another list and then return that list as the new list and that would work. However, can we solve this without using an another list / extra space? Yep we can, as with every algorithm question it is important to read each line carefully, this linked list is already sorted...why would the question say that? or than to give you a clue...it means in theory we can check the next node to see if its value matches the value to remove and if it does we change the next pointer of the previous value to point already thereby "deleting the node".
+To solve this we could append each of the nodes that don't match the val to another list and then return that list as the new list and that would work. However, can we solve this without using an another list / extra space?
 
 The idea will be, transverse the linked list check if .next.val === valToRemove, if it does change .next = .next.next (thereby deleting the node in-between). If it doesn't match the value we can advance the current pointer by one.
 
