@@ -21,13 +21,6 @@ Welcome back, part of my Self Development Goals for 2021 is "Complete at least 2
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
         """
-        :type head: ListNode
-        :type val: int
-        :rtype: ListNode
-        """
-
-
-        """
         Time Complexity: O(n)
         Space Complexity: O(1) since we reuse existing list.
         """
@@ -51,7 +44,7 @@ class Solution:
 
 ## Time / Space Complexity
 
-Time: O(N + N) = O(N)
+Time: O(N)
 
 Why: TBA
 
