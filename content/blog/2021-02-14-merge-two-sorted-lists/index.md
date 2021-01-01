@@ -49,7 +49,7 @@ class Solution:
         if l1 != None:
             newMergedLL.next = l1
 
-        # If there are any nodes left in l1, point last node in new linked list to current position in l2
+        # If there are any nodes left in l2, point last node in new linked list to current position in l2
         if l2 != None:
             newMergedLL.next = l2
 
