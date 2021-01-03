@@ -1,5 +1,5 @@
 ---
-title: "2020: Self Development Goals"
+title: "2021: Self Development Goals"
 date: "2021-01-03"
 coverImage: "Brown-New-Year-Card.png"
 description: "Discussing my Self Development Goals for 2021."
