@@ -27,14 +27,12 @@ class Solution:
         :rtype: List[int]
         """
         hash_map = {};
-
         for i, num in enumerate(nums):
             n = target - num
             if n in hash_map:
                 return [hash_map[n], i]
             else:
                 hash_map[num] = i;
-
 
 # Input: nums = [2,7,11,15], target = 9
 # Output: [0,1]
