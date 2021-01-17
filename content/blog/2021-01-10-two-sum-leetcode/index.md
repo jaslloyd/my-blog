@@ -19,15 +19,14 @@ There are a few ways to approach this problem we could Bruce force the solution 
 We can, we can use additional space to reduce the overall time complexity. The idea is: as we go through each number, check if target - currentNum already exist in hashmap(meaning it exists in the array) we can return that value & index as well as the current index. If we cannot find the value in the array we can add it along with the index (hash_map[num] = i).
 
 ```py
-class Solution(object):
-    def twoSum(self, nums, target):
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         """
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
         """
         hash_map = {};
-        # Go through each element, minus that element from the target, if that new target exists return hash_map[new_target], currentIndex, if its not in the hashmap add it (Key = Number), value = index
         for i, num in enumerate(nums):
             n = target - num
             if n in hash_map:
@@ -72,7 +71,7 @@ This approach is know as a Two pointer solution, it is a very useful technique a
 
 ```py
 class Solution(object):
-    def twoSum(self, numbers, target):
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         """
         :type numbers: List[int]
         :type target: int
@@ -107,14 +106,16 @@ class Solution(object):
 ### Time / Space Complexity
 
 Time: O(n)
+
 Why: At worst we need go through each element of the array to find two matching elements, hash table look ups are O(1) so our complexity is O(n)
 
 Space: O(1)
+
 Why: Previously we were using a hashmap which at worst we would have had to store N elements so space was O(n). Now that we not longer need the hashmap and we are just using pointers the space becomes O(1)
 
 ## Conclusion
 
-I hope you enjoyed this first post on solving some Leetcode problems, there are a lot of articles / videos explaining this problem, I feel like sometimes these skip over important details which is another reason why I wanted to write about them. Anyway, that is 2 / 25 for my yearly goal done! now onto the rest, i hope you enjoyed this post!
+I hope you enjoyed this first post on solving Leetcode problems, there are a lot of articles / videos explaining this problem, I feel like sometimes these skip over important details which is another reason why I wanted to write about them. Anyway, that is 2 / 25 for my yearly goal done! now onto the rest, i hope you enjoyed this post!
 
 Until next time
 
