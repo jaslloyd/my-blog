@@ -12,7 +12,7 @@ Welcome back, part of my Self Development Goals for 2021 is "Complete at least 2
 
 ## Solution
 
-The solution to this question is very similar to the last post [Leetcode 10 / 25 Post: Remove Linked List Element ](tba), so please check that out for more details. We can do it in O(n) time and O(1) space by just switching pointers. Since the list is sorted we know the duplicate elements will appear one after each other, its a case of checking for the value and moving the next pointer until we reach the end of the list.
+The solution to this question is very similar to the last post [Leetcode 10 / 25 Post: Remove Linked List Element ](https://thedeployguy.com/2021-02-07-remove-linked-list-element/), so please check that out for more details. We can do it in O(n) time and O(1) space by just switching pointers. Since the list is sorted we know the duplicate elements will appear one after each other, its a case of checking for the value and moving the next pointer until we reach the end of the list.
 
 ```py
 # Definition for singly-linked list.
