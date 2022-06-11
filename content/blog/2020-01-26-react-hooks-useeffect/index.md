@@ -91,7 +91,7 @@ function TodosApp() {
     fetchData()
   }, [searchText]) // If the query dependency changes rerun this function
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     e.preventDefault()
     setSearchUserId(e.target.value)
   }
@@ -100,7 +100,7 @@ function TodosApp() {
       <input type="text" onChange={handleChange} />
       <button onClick={() => setSearchText(searchUserId)}>Get Users</button>
       <ul>
-        {todos.map(todo => (
+        {todos.map((todo) => (
           <li key={todo.id}>{todo.title}</li>
         ))}
       </ul>

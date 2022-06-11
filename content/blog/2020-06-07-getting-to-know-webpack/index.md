@@ -208,9 +208,7 @@ In `webpack-tut/public` create an index.html file
 ```html
 <!DOCTYPE html>
 <html lang="en">
-  <title>
-    Webpack Tutorial
-  </title>
+  <title>Webpack Tutorial</title>
   <body>
     <div id="root"></div>
   </body>
