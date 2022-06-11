@@ -26,8 +26,8 @@
     "gatsby-transformer-remark": "^5.16.0",
     "gatsby-transformer-sharp": "^4.16.0",
     "prismjs": "^1.28.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-toggle": "^4.1.2",
     "react-typography": "^0.16.20",
@@ -37,7 +37,7 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^2.6.2"
+    "prettier": "^1.19.1"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
