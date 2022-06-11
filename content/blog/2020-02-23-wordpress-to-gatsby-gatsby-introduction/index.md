@@ -90,8 +90,7 @@ There are a few ways to pull data from a variety of sources into your pages/comp
 
 At build time, Gatsby will look through your pages/components and see if it finds an exported GraphQL string. When it finds one, it will run it and provide the data to the component via Props on the data property. So for the above example pageQuery, it looks at the `siteMetadata` in gatsby-config.js and takes the title and inject it into the about.js component via data object. (The nice thing is, how you access the data is like your query e.g: `data.site.siteMetadata.title`)
 
-
-  **Note**: You can only have one page query per file
+**Note**: You can only have one page query per file
 
 - StaticQuery - which a component that takes a query as an argument and provides the data via a render prop.
 
@@ -109,7 +108,7 @@ At build time, Gatsby will look through your pages/components and see if it find
           }
         }
       `}
-      render={data => (
+      render={(data) => (
         <header>
           <h1>{data.site.siteMetadata.title}</h1>
         </header>
@@ -158,14 +157,13 @@ As I said we can use plugins to convert Markdown to HTML. We can just focus on w
 2. During Build time, Gatsby calls `createPages` in `gatsby-node.js`, which will:
 
    1. Use GraphQL to query for all the markdown files via allMarkdownRemark. This is provided by gatsby-transformer-remark which allows you to query for markdown files, it also converts the pages into HTML.
-   2.  It then goes through each of the posts it finds and uses the createPage API (which is provided by Gatsby) to create a page with the post details.
+   2. It then goes through each of the posts it finds and uses the createPage API (which is provided by Gatsby) to create a page with the post details.
 
 3. Since the pages are created during build time, created pages are put directly into the public folder along with the rest of your app. This means you do not have a copy in /pages you only need to care and update files in the `content/blog` folder.
 
 4. Posts can now be viewed within your website.
 
 If you are wondering how the title of a post gets set or the date, well if you look at a post provided in the Gatsby starter template, all the files start with something like this:
-
 
 ```
 ---
@@ -176,8 +174,7 @@ date: "2019-08-01"
 
 This is called FrontMatter and is basically metadata for your posts, you can put whatever properties you want here and you will be able to query them in your script files.
 
-I hope this gives you a better understanding of how pages go from Markdown to HTML, since all this ids provided by the template you will  rarely have to change this behavior but I wanted to go through it as you may want to customize certain things down the line.
-
+I hope this gives you a better understanding of how pages go from Markdown to HTML, since all this ids provided by the template you will rarely have to change this behavior but I wanted to go through it as you may want to customize certain things down the line.
 
 ## Conclusion
 

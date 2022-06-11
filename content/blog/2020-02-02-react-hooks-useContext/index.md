@@ -77,9 +77,9 @@ function App() {
 function MainRender() {
   return (
     <ThemeContext.Consumer>
-      {themeValue => (
+      {(themeValue) => (
         <CartContext.Consumer>
-          {cartValue => (
+          {(cartValue) => (
             <main className={themeValue}>
               <h1>Consuming Context: No Hooks</h1>
               <h2>Current theme value: {themeValue}</h2>
