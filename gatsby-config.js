@@ -57,7 +57,12 @@ module.exports = {
         anonymize: true,
       },
     },
-    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
