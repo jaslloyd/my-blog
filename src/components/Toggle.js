@@ -1,11 +1,9 @@
-import React from 'react'
-import Toggle from 'react-toggle'
-import './Toggle.css'
+import React from "react"
+import Toggle from "react-toggle"
+import "./Toggle.css"
 
 const CustomToggle = ({ isChecked, handleThemeChange }) => (
-    <Toggle
-        defaultChecked={isChecked}
-        onChange={handleThemeChange} />
+  <Toggle defaultChecked={isChecked} onChange={handleThemeChange} />
 )
 
-export default CustomToggle;
+export default CustomToggle

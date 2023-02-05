@@ -16,7 +16,7 @@ const Bio = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic-jason.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 75, height: 75) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -32,7 +32,7 @@ const Bio = () => {
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata
   return (
     <div
       style={{
@@ -56,7 +56,8 @@ const Bio = () => {
       <p>
         Personal Blog by{" "}
         <a href={`https://www.linkedin.com/in/jason-lloyd/`}>Jason Lloyd</a>.
-        <br />I talk about programming, life, self-development and everything in-between.
+        <br />I talk about programming, life, self-development and everything
+        in-between.
       </p>
     </div>
   )

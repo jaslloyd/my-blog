@@ -212,9 +212,7 @@ We have replaced `style-loader` with MiniCssExtractPlugin.loader. Open the comma
 ```html
 <!DOCTYPE html>
 <html lang="en">
-  <title>
-    Webpack Tutorial
-  </title>
+  <title>Webpack Tutorial</title>
   <head>
     <link rel="stylesheet" href="main.css" />
   </head>

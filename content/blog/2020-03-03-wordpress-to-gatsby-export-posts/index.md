@@ -12,7 +12,6 @@ While there are various ways to getting data out of WordPress, I am going to be 
 2. Use [wordpress-export-to-markdown](https://github.com/lonekorean/wordpress-export-to-markdown) to go through the xml documents and generate the markdown files.
 3. Take all this folders and import them into `content/blog`.
 
-
 ## Exporting Data from WordPress
 
 Exporting data from WordPress is pretty easy if you use the UI, on your WordPress Wp Admin Dashboard go to Tools > Export:
@@ -28,6 +27,7 @@ We are going to use the file we generated in the last step along with a tool cal
 
 1. Open a terminal navigate to where you have blog backup file downloaded. In my case it is `Downloads`.
 2. Run `npx wordpress-export-to-markdown --input=thedeployguy.WordPress.2019-12-28.xml`, when you run this a wizard will come up asking you a bunch of questions. Each of this will be custom based on your wordpress setup but here is what I choose:
+
 ```sh
 $ npx wordpress-export-to-markdown --input=thedeployguy.WordPress.2019-12-28.xml
 
@@ -43,7 +43,7 @@ Starting wizard...
 
 3. Once you run that command you should have all your posts converted into Markdown!
 
-If you look at the format the post it looks very similar to how the sample posts look in the `content/blog` directory e.g: ``output\2018-04-22-2018-my-year-so-far-goals-progress-report\index.md. If you open one of the sample posts you will also see that frontmatter has been added to the posts i.e the tool provides and pull the metadata for your posts. 
+If you look at the format the post it looks very similar to how the sample posts look in the `content/blog` directory e.g: ``output\2018-04-22-2018-my-year-so-far-goals-progress-report\index.md. If you open one of the sample posts you will also see that frontmatter has been added to the posts i.e the tool provides and pull the metadata for your posts.
 
 ## Importing markdown posts into new blog.
 
@@ -58,8 +58,3 @@ A few things, you may want to double check some of your posts, the first time I 
 ## Conclusion
 
 That is it for the second post about migrating WordPress to Gatsby, this was a post on pulling data out of WordPress and converting it into Markdown. Doing it this way saves a lot of time by instead of going into each of your posts and exporting them individually it is done in bulk and it is converted automatically. Well now that the majority of the hard work is done in the next series of post we are going to be adding some polish to the blog, I hope you join me there.
-
-
-
-
-

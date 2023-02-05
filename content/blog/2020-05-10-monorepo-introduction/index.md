@@ -20,7 +20,7 @@ Advantages of monorepos
 
 Disadvantages of monorepos
 
-- Monorepo complicate the deployment process, when you have separate repos you can easily control / tune them but when you are in a monorepo that is not always entirely possible. This is why huge monorepos  heavily use automation or scripts to handle this process.
+- Monorepo complicate the deployment process, when you have separate repos you can easily control / tune them but when you are in a monorepo that is not always entirely possible. This is why huge monorepos heavily use automation or scripts to handle this process.
 - Onboarding developers to a monorepo can be overwhelming if they have not used it before. There is a lot of code, processes and automation around a big monorepo that leads to a difficult learning curve when onboarding.
 
 These are many other advantages and disadvantages but today I want to focus on getting started with a javascript based monorepo with the help of yarn workspaces.
@@ -40,13 +40,13 @@ This post is going to focus on yarn workspaces, I will write another post on exp
 Before we get started all the code for this post will be available [here](https://github.com/jaslloyd/monorepo).
 
 Steps:
+
 1. Create a package.json file in the root of your directory
+
 ```json
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": ["packages/*"]
 }
 ```
 
@@ -56,14 +56,16 @@ Steps:
 That is actually all that is required to start with yarn workspaces, I am going to create two packages in the upcoming steps, one front-end application and one component library. If you have your own packages you can mostly stop here or skip to the next section.
 
 2. Create a FE application using create-react-app inside the packages folder.
+
 ```sh
 cd packages/
 npx create-react-app fe1 --template typescript
 ```
 
 3. Create a component library for our packages to use
-Imagine this as being a common component library that may be used in multiple frontends in your monorepo.
-We are going to use a boiler-plate generator to create a library template (Saves us time).
+   Imagine this as being a common component library that may be used in multiple frontends in your monorepo.
+   We are going to use a boiler-plate generator to create a library template (Saves us time).
+
 ```sh
 cd packages/
 npx create-react-library react-lib
@@ -72,6 +74,7 @@ npx create-react-library react-lib
 If you do not want to use a boiler-plate generator for your library you can see a very simple example of this [here](https://github.com/jaslloyd/monorepo/tree/master/packages/react-component-lib)
 
 4. Edit package.json in react-lib
+
 ```sh
 {
     "name": "@monorepo/react-lib",
@@ -83,15 +86,16 @@ If you do not want to use a boiler-plate generator for your library you can see 
 A common approach is to add a package scope to your monorepo packages e.g in this case it is @monorepo. This means when using something from our react-lib we can do something like this:
 `ìmport { ... } from '@monorepo/react-lib-v2'` which is really cool.
 
-Inside `src/index.tsx` you will see an ExampleComponent we are going to import this inside our front-end application we built earlier. Before we do that we need to compile the library to JS, this is not strictly required but it is good practice and it means projects in your monorepo do not have to use typescript to consume your library. 
+Inside `src/index.tsx` you will see an ExampleComponent we are going to import this inside our front-end application we built earlier. Before we do that we need to compile the library to JS, this is not strictly required but it is good practice and it means projects in your monorepo do not have to use typescript to consume your library.
 
 5. Run `yarn build` inside the `packages/react-lib` folder.
 
 This will compile and generate a dist folder, there are then entires in package.json (main, module) which will look for files in that folder and fetch the necessary packages.
 
 6. Inside `packages/fe1/src/App.tsx` import the ExampleComponent.
+
 ```jsx
-import { ExampleComponent } from '@monorepo/react-lib';
+import { ExampleComponent } from "@monorepo/react-lib"
 ```
 
 7. Run `yarn build` inside packages/fe1 to generate your production build.
@@ -101,6 +105,7 @@ This is where the power of yarn comes in, yarn will see all the imports and depe
 ### Using yarn workspaces commands to make things easier.
 
 You may have noticed that above we are constantly `cd packages/[package_name]` to run commands and this gets more annoying the more packages you have...this is why yarn has a command to avoid use doing that. In the root package.json file lets add a scripts section to help us.
+
 ```json
 {
     ...
@@ -111,9 +116,11 @@ You may have noticed that above we are constantly `cd packages/[package_name]` t
     }
 }
 ```
+
 Yarn provides the yarn workspace command to allow you to run npm scripts in varies packages within your monorepo e.g yarn start:fe1 will go into the `packages/fe1` folder and run the npm start script. This is very useful because you don't have to constantly change directory, this is also very useful for CI workflows.
 
 ## Resources
+
 While this was a short post on monorepos, I wanted to provide some extra resources:
 
 [Ben Awad yarn-workspaces-example](https://github.com/benawad/yarn-workspaces-example) - [Video Tutorial](https://www.youtube.com/watch?v=G8KXFWftCg0)
