@@ -2,6 +2,7 @@
 title: "Leetcode 83 Remove Duplicates from Sorted List"
 date: "2021-02-11"
 description: "Leetcode Goal 11 / 25, Remove Duplicates from Sorted List"
+hidden: true
 ---
 
 Welcome back, part of my Self Development Goals for 2021 is "Complete at least 25 - 50 Leetcode Questions", today we are going to discuss and solve [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)

@@ -2,6 +2,7 @@
 title: "Leetcode 268 Missing Number"
 date: "2021-01-17"
 description: "Leetcode Goal 4 / 25, Discussing and solving Missing Number"
+hidden: true
 ---
 
 Welcome back, part of my Self Development Goals for 2021 is "Complete at least 25 - 50 Leetcode Questions", today we are going to discuss and solve [Leetcode 268 Missing Numbers](https://leetcode.com/problems/missing-number)

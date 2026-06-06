@@ -2,6 +2,7 @@
 title: "Leetcode 206 Reverse Linked List"
 date: "2021-01-31"
 description: "Leetcode Goal 8 / 25, Reverse Linked List"
+hidden: true
 ---
 
 Welcome back, part of my Self Development Goals for 2021 is "Complete at least 25 - 50 Leetcode Questions", today we are going to discuss and solve [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)

@@ -2,6 +2,7 @@
 title: "Leetcode 203 Remove Linked List Element"
 date: "2021-02-07"
 description: "Leetcode Goal 10 / 25, Remove Linked List Element"
+hidden: true
 ---
 
 Welcome back, part of my Self Development Goals for 2021 is "Complete at least 25 - 50 Leetcode Questions", today we are going to discuss and solve [Remove Linked List Element](https://leetcode.com/problems/remove-linked-list-elements/)

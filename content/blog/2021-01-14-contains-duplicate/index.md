@@ -2,6 +2,7 @@
 title: "Leetcode 217 Contains Duplicate"
 date: "2021-01-14"
 description: "Leetcode Goal 3 / 25, Discussing Contains Duplicate"
+hidden: true
 ---
 
 Welcome back, part of my Self Development Goals for 2021 is "Complete at least 25 - 50 Leetcode Questions", today we are going to discuss and solve [Leetcode 217 Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)

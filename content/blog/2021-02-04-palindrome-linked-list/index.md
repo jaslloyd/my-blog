@@ -2,6 +2,7 @@
 title: "Leetcode 234 Palindrome Linked List"
 date: "2021-02-04"
 description: "Leetcode Goal 9 / 25, Palindrome Linked List"
+hidden: true
 ---
 
 Welcome back, part of my Self Development Goals for 2021 is "Complete at least 25 - 50 Leetcode Questions", today we are going to discuss and solve [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)

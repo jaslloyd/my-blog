@@ -2,6 +2,7 @@
 title: "Leetcode 21 Merge Two Sorted Lists"
 date: "2021-02-14"
 description: "Leetcode Goal 12 / 25, Merge Two Sorted Lists"
+hidden: true
 ---
 
 Welcome back, part of my Self Development Goals for 2021 is "Complete at least 25 - 50 Leetcode Questions", today we are going to discuss and solve [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)

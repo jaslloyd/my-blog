@@ -2,6 +2,7 @@
 title: "Leetcode 786 Middle of the Linked List"
 date: "2021-01-28"
 description: "Leetcode Goal 7 / 25, Middle of the Linked List"
+hidden: true
 ---
 
 Welcome back, part of my Self Development Goals for 2021 is "Complete at least 25 - 50 Leetcode Questions", today we are going to discuss and solve [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
