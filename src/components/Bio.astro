@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import profilePic from '../assets/profile-pic-jason.jpg';
+import { AUTHOR } from '../consts';
+---
+
+<div class="bio">
+	<Image src={profilePic} alt={AUTHOR} width={75} height={75} />
+	<p>
+		Personal Blog by <a href="https://www.linkedin.com/in/jason-lloyd/">{AUTHOR}</a>.
+		<br />I talk about programming, life, self-development and everything in-between.
+	</p>
+</div>
+
+<style>
+	.bio {
+		display: flex;
+		margin-bottom: 4.375rem;
+	}
+	img {
+		margin: 0 0.875rem 0 0;
+		min-width: 50px;
+		width: 75px;
+		height: 75px;
+		border-radius: 50%;
+	}
+	p {
+		margin: 0;
+	}
+</style>

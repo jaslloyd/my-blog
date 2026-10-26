@@ -1,41 +1,45 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<h1 align="center">
-  My Personal Blog
-</h1>
+# thedeployguy
 
-## 🚀 Quick start
+Source for [thedeployguy.com](https://thedeployguy.com), a personal blog about programming, life, self-development and everything in-between. Built with [Astro](https://astro.build), migrated from the original Gatsby site ([jaslloyd/my-blog](https://github.com/jaslloyd/my-blog)).
 
-1.  **Start developing.**
+## Development
 
-    Navigate into your new site’s directory and start it up.
+Node is managed with [fnm](https://github.com/Schniz/fnm), which picks up `.node-version` when you `cd` in.
 
-    ```shell
-    cd my-blog/
-    npm start
-    ```
+```sh
+npm install
+npm run dev       # http://localhost:4321
+npm run build     # static site in dist/
+npm run preview   # serve the build locally
+```
 
-2.  **Open the source code and start editing!**
+## Writing a post
 
-    Your site is now running at `http://localhost:8000`!
+Each post is a folder in `src/content/blog/`, and the folder name is its URL:
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+```
+src/content/blog/2026-10-26-my-new-post/
+├── index.md
+└── images/
+    └── screenshot.png
+```
 
-## 🧐 What's inside?
+```md
+---
+title: "My new post"
+date: "2026-10-26"
+description: "Optional summary for the home page, RSS and search results"
+---
 
-1.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+![Alt text](./images/screenshot.png)
+```
 
-2.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+Add `hidden: true` to the front matter to keep a post out of the build. Code blocks support Gatsby-style line highlighting, for example ` ```js{1,3-5} `.
 
-3.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+## Deploying
 
-4.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+Built and hosted on Netlify (`netlify.toml`). `public/_redirects` keeps the old WordPress and Gatsby-era URLs working, and `public/sw.js` removes the offline service worker the Gatsby site installed in readers' browsers.
 
-5.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+## License
 
-## Resources I found
-
-[Netlify Redirects](https://play.netlify.com/redirects)
-
-[Static Folder (Redirects Related)](https://www.gatsbyjs.org/docs/static-folder)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+Posts are licensed under `LICENSE-posts`; the site code under `LICENSE-website`.

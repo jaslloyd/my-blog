@@ -1,0 +1,253 @@
+/*
+ * Typography ported from the Gatsby site's typography.js output
+ * (typography-theme-wordpress-2016): Merriweather body, Montserrat title,
+ * 1.75rem vertical rhythm.
+ */
+
+:root {
+	--rhythm: 1.75rem;
+	--text: hsla(0, 0%, 0%, 0.9);
+	--text-muted: hsla(0, 0%, 0%, 0.59);
+	--bg: #fff;
+	--link: #007acc;
+	--rule: hsla(0, 0%, 0%, 0.2);
+	--table-rule: hsla(0, 0%, 0%, 0.12);
+	--inline-code-bg: rgba(255, 229, 100, 0.2);
+	color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+	--text: #fff;
+	--text-muted: hsla(0, 0%, 100%, 0.75);
+	--bg: #282c35;
+	--link: #bd946c;
+	--rule: hsla(0, 0%, 100%, 0.2);
+	--table-rule: hsla(0, 0%, 100%, 0.12);
+	--inline-code-bg: rgba(115, 124, 153, 0.2);
+	color-scheme: dark;
+}
+
+html {
+	font: 100%/1.75 'Merriweather', Georgia, serif;
+	box-sizing: border-box;
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	color: var(--text);
+	background-color: var(--bg);
+	font-weight: 400;
+	word-wrap: break-word;
+	font-kerning: normal;
+	font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	margin: 0 0 var(--rhythm);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 3.5rem 0 var(--rhythm);
+	padding: 0;
+	color: inherit;
+	font-family: 'Merriweather', Georgia, serif;
+	font-weight: 900;
+	text-rendering: optimizeLegibility;
+	line-height: 1.1;
+}
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2.5rem;
+}
+h2 {
+	font-size: 1.73286rem;
+}
+h3 {
+	font-size: 1.4427rem;
+}
+h4 {
+	font-size: 1rem;
+	letter-spacing: 0.140625em;
+	text-transform: uppercase;
+}
+h5 {
+	font-size: 0.83255rem;
+}
+h6 {
+	font-size: 0.75966rem;
+	font-style: italic;
+}
+
+p,
+ul,
+ol,
+dl,
+dd,
+figure,
+pre,
+table,
+fieldset,
+form,
+iframe,
+address {
+	margin: 0 0 var(--rhythm);
+	padding: 0;
+}
+
+ul,
+ol {
+	margin-left: var(--rhythm);
+	list-style-position: outside;
+}
+ul {
+	list-style: disc;
+}
+li {
+	margin-bottom: calc(var(--rhythm) / 2);
+}
+li > ul,
+li > ol {
+	margin: calc(var(--rhythm) / 2) 0 calc(var(--rhythm) / 2) var(--rhythm);
+}
+li > p {
+	margin-bottom: calc(var(--rhythm) / 2);
+}
+li *:last-child,
+p *:last-child {
+	margin-bottom: 0;
+}
+
+b,
+strong,
+dt,
+th {
+	font-weight: 700;
+}
+
+small {
+	font-size: 80%;
+}
+
+blockquote {
+	margin: 0 var(--rhythm) var(--rhythm) calc(-1 * var(--rhythm));
+	padding: 0 0 0 1.42188rem;
+	font-size: 1.20112rem;
+	line-height: var(--rhythm);
+	color: var(--text-muted);
+	font-style: italic;
+	border-left: 0.32813rem solid var(--link);
+}
+blockquote > :last-child {
+	margin-bottom: 0;
+}
+
+hr {
+	margin: 0 0 calc(var(--rhythm) - 1px);
+	background: var(--rule);
+	border: none;
+	height: 1px;
+}
+
+table {
+	font-size: 1rem;
+	line-height: var(--rhythm);
+	border-collapse: collapse;
+	width: 100%;
+}
+thead {
+	text-align: left;
+}
+td,
+th {
+	text-align: left;
+	border-bottom: 1px solid var(--table-rule);
+	font-feature-settings: 'tnum';
+	padding: 0.875rem 1.16667rem calc(0.875rem - 1px);
+}
+th:first-child,
+td:first-child {
+	padding-left: 0;
+}
+th:last-child,
+td:last-child {
+	padding-right: 0;
+}
+
+a {
+	color: var(--link);
+	text-decoration: none;
+	box-shadow: 0 1px 0 0 currentColor;
+}
+a:hover,
+a:active {
+	box-shadow: none;
+}
+
+@media only screen and (max-width: 480px) {
+	blockquote {
+		margin-left: -1.3125rem;
+		margin-right: 0;
+		padding-left: 0.98438rem;
+	}
+}
+
+/* Code: Night Owl blocks via Shiki, as the Gatsby site had via Prism. */
+
+code,
+kbd,
+samp {
+	font-family: Consolas, Menlo, Monaco, source-code-pro, 'Courier New', monospace;
+	font-size: 0.85rem;
+	line-height: var(--rhythm);
+}
+
+:not(pre) > code {
+	border-radius: 0.3em;
+	background: var(--inline-code-bg);
+	padding: 0.15em 0.2em 0.05em;
+	white-space: normal;
+}
+
+pre.astro-code {
+	margin: 0 -1.3125rem var(--rhythm);
+	padding: 1.3125rem;
+	border-radius: 10px;
+	font-size: 0.85rem;
+	line-height: 1.5;
+	tab-size: 4;
+}
+
+pre.astro-code code {
+	line-height: 1.5;
+}
+
+pre.astro-code .line.highlighted {
+	display: inline-block;
+	width: calc(100% + 2.625rem);
+	margin: 0 -1.3125rem;
+	padding: 0 1.3125rem 0 1.0625rem;
+	background-color: hsla(207, 95%, 15%, 1);
+	border-left: 0.25em solid #ffa7c4;
+}
+
+@media (max-width: 672px) {
+	pre.astro-code {
+		border-radius: 0;
+	}
+}

@@ -1,0 +1,76 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Bio from '../components/Bio.astro';
+import { description, formatDate, getPosts, type Post } from '../lib/posts';
+
+export const getStaticPaths = (async () => {
+	const posts = await getPosts();
+	// posts are newest first, so "previous" is the next one down the list.
+	return posts.map((post, i) => ({
+		params: { slug: post.id },
+		props: { post, previous: posts[i + 1], next: posts[i - 1] },
+	}));
+}) satisfies GetStaticPaths;
+
+interface Props {
+	post: Post;
+	previous?: Post;
+	next?: Post;
+}
+
+const { post, previous, next } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={post.data.title} description={description(post)} type="article">
+	<article>
+		<header>
+			<h1>{post.data.title}</h1>
+			<p class="date">{formatDate(post.data.date)}</p>
+		</header>
+		<section class="post">
+			<Content />
+		</section>
+		<hr />
+		<footer>
+			<Bio />
+		</footer>
+	</article>
+
+	<nav>
+		<ul>
+			<li>
+				{previous && <a href={`/${previous.id}/`} rel="prev">← {previous.data.title}</a>}
+			</li>
+			<li>
+				{next && <a href={`/${next.id}/`} rel="next">{next.data.title} →</a>}
+			</li>
+		</ul>
+	</nav>
+</BaseLayout>
+
+<style>
+	h1 {
+		margin-top: 1.75rem;
+		margin-bottom: 0;
+	}
+	.date {
+		display: block;
+		font-size: 0.83255rem;
+		line-height: 1.75rem;
+		margin-bottom: 1.75rem;
+	}
+	hr {
+		margin-bottom: 1.75rem;
+	}
+	nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+</style>

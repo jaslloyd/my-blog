@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Bio from '../components/Bio.astro';
+import { excerpt, formatDate, getPosts } from '../lib/posts';
+
+const posts = await getPosts();
+---
+
+<BaseLayout
+	title="All posts"
+	description="A blog by Jason Lloyd about programming, life, self-development and everything in-between."
+>
+	<Bio />
+	{
+		posts.map((post) => (
+			<article>
+				<header>
+					<h3>
+						<a href={`/${post.id}/`}>{post.data.title}</a>
+					</h3>
+					<small>{formatDate(post.data.date)}</small>
+				</header>
+				<p>{post.data.description || excerpt(post)}</p>
+			</article>
+		))
+	}
+</BaseLayout>
+
+<style>
+	h3 {
+		margin-top: 3.5rem;
+		margin-bottom: 0.4375rem;
+	}
+	h3 a {
+		box-shadow: none;
+	}
+</style>
