@@ -5,7 +5,7 @@ import { AUTHOR } from '../consts';
 ---
 
 <div class="bio">
-	<Image src={profilePic} alt={AUTHOR} width={75} height={75} />
+	<Image src={profilePic} alt={AUTHOR} width={96} height={96} densities={[1, 2]} />
 	<p>
 		Personal Blog by <a href="https://www.linkedin.com/in/jason-lloyd/">{AUTHOR}</a>.
 		<br />I talk about programming, life, self-development and everything in-between.
@@ -15,13 +15,15 @@ import { AUTHOR } from '../consts';
 <style>
 	.bio {
 		display: flex;
+		align-items: center;
 		margin-bottom: 4.375rem;
 	}
 	img {
-		margin: 0 0.875rem 0 0;
-		min-width: 50px;
-		width: 75px;
-		height: 75px;
+		margin: 0 1rem 0 0;
+		flex-shrink: 0;
+		width: 96px;
+		height: 96px;
+		object-fit: cover;
 		border-radius: 50%;
 	}
 	p {
