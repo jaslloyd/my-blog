@@ -1,43 +1,45 @@
-# Astro Starter Kit: Minimal
+# thedeployguy
+
+Source for [thedeployguy.com](https://thedeployguy.com), a personal blog about programming, life, self-development and everything in-between. Built with [Astro](https://astro.build), migrated from the original Gatsby site ([jaslloyd/my-blog](https://github.com/jaslloyd/my-blog)).
+
+## Development
+
+Node is managed with [fnm](https://github.com/Schniz/fnm), which picks up `.node-version` when you `cd` in.
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev       # http://localhost:4321
+npm run build     # static site in dist/
+npm run preview   # serve the build locally
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Writing a post
 
-## 🚀 Project Structure
+Each post is a folder in `src/content/blog/`, and the folder name is its URL:
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+src/content/blog/2026-10-26-my-new-post/
+├── index.md
+└── images/
+    └── screenshot.png
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+```md
+---
+title: "My new post"
+date: "2026-10-26"
+description: "Optional summary for the home page, RSS and search results"
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+![Alt text](./images/screenshot.png)
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+Add `hidden: true` to the front matter to keep a post out of the build. Code blocks support Gatsby-style line highlighting, for example ` ```js{1,3-5} `.
 
-## 🧞 Commands
+## Deploying
 
-All commands are run from the root of the project, from a terminal:
+Built and hosted on Netlify (`netlify.toml`). `public/_redirects` keeps the old WordPress and Gatsby-era URLs working, and `public/sw.js` removes the offline service worker the Gatsby site installed in readers' browsers.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## License
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Posts are licensed under `LICENSE-posts`; the site code under `LICENSE-website`.
