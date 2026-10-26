@@ -1,0 +1,108 @@
+---
+import '@fontsource/merriweather/400.css';
+import '@fontsource/merriweather/400-italic.css';
+import '@fontsource/merriweather/700.css';
+import '@fontsource/merriweather/900.css';
+import '@fontsource/montserrat/900.css';
+import '../styles/global.css';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import { AUTHOR, SITE_DESCRIPTION, SITE_TITLE, TWITTER } from '../consts';
+
+interface Props {
+	title: string;
+	description?: string;
+	type?: 'website' | 'article';
+}
+
+const { title, description = SITE_DESCRIPTION, type = 'website' } = Astro.props;
+const isHome = Astro.url.pathname === '/';
+const fullTitle = `${title} | ${SITE_TITLE}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{fullTitle}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="/rss.xml" />
+		<meta name="generator" content={Astro.generator} />
+
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content={type} />
+		<meta property="og:url" content={canonical} />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content={`@${TWITTER}`} />
+		<meta name="twitter:creator" content={`@${TWITTER}`} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="author" content={AUTHOR} />
+
+		<script is:inline>
+			// Set the theme before first paint so dark mode doesn't flash light.
+			try {
+				const saved = localStorage.getItem('theme');
+				const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+				document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
+			} catch {
+				document.documentElement.dataset.theme = 'light';
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				{
+					isHome ? (
+						<h1 class="site-title">
+							<a href="/">{SITE_TITLE}</a>
+						</h1>
+					) : (
+						<h3 class="site-title small">
+							<a href="/">{SITE_TITLE}</a>
+						</h3>
+					)
+				}
+				<ThemeToggle />
+			</header>
+			<main>
+				<slot />
+			</main>
+			<footer>
+				© {new Date().getFullYear()}, Built with <a href="https://astro.build">Astro</a>
+			</footer>
+		</div>
+	</body>
+</html>
+
+<style>
+	.container {
+		margin: 0 auto;
+		max-width: 42rem;
+		padding: 2.625rem 1.3125rem;
+	}
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 2.625rem;
+	}
+	.site-title {
+		margin: 0;
+		font-size: 1.976425rem;
+	}
+	.site-title.small {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1.4427rem;
+	}
+	.site-title a {
+		box-shadow: none;
+		text-decoration: none;
+		color: inherit;
+	}
+</style>

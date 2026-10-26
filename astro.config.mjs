@@ -1,7 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import { satteri } from '@astrojs/markdown-satteri';
 import { transformerMetaHighlight } from '@shikijs/transformers';
-import remarkLineHighlight from './src/plugins/remark-line-highlight.mjs';
+import lineHighlight from './src/plugins/line-highlight.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,7 +10,7 @@ export default defineConfig({
 	// Gatsby served every page at /<slug>/, so keep the trailing slash.
 	trailingSlash: 'always',
 	markdown: {
-		remarkPlugins: [remarkLineHighlight],
+		processor: satteri({ mdastPlugins: [lineHighlight] }),
 		shikiConfig: {
 			// Same Night Owl palette the Gatsby site used for code blocks.
 			theme: 'night-owl',
