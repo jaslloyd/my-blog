@@ -1,37 +1,132 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Bio from '../components/Bio.astro';
-import { excerpt, formatDate, getPosts } from '../lib/posts';
+import profilePic from '../assets/profile-pic-jason.jpg';
+import { AUTHOR, GITHUB, LINKEDIN, PROJECTS, TWITTER } from '../consts';
+import { getPosts } from '../lib/posts';
 
-const posts = await getPosts();
+const recentPosts = (await getPosts()).slice(0, 5);
 ---
 
 <BaseLayout
-	title="All posts"
-	description="A blog by Jason Lloyd about programming, life, self-development and everything in-between."
+	title={AUTHOR}
+	description="Jason Lloyd is a software engineer in Dublin who builds things, writes about them and goes to a lot of football."
 >
-	<Bio />
-	{
-		posts.map((post) => (
-			<article>
-				<header>
-					<h3>
+	<section class="intro">
+		<Image src={profilePic} alt={AUTHOR} width={112} height={112} densities={[1, 2]} />
+		<div>
+			<p class="lead">
+				Hi, I'm {AUTHOR}. I'm a software engineer who likes building small, useful things and
+				writing about what I learn along the way.
+			</p>
+			<p class="links">
+				<a href={`https://github.com/${GITHUB}`}>GitHub</a>
+				<a href={LINKEDIN}>LinkedIn</a>
+				<a href={`https://x.com/${TWITTER}`}>X</a>
+				<a href="/rss.xml">RSS</a>
+			</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>Now</h2>
+		<ul>
+			<li>Building my own Claude Code skills so my setup follows me between machines.</li>
+			<li>Groundhopping around the Leinster Senior League and mapping every ground I visit.</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Things I've built</h2>
+		<ul class="projects">
+			{
+				PROJECTS.map((project) => (
+					<li>
+						<a href={project.href}>{project.name}</a>
+						{project.source && (
+							<>
+								{' '}
+								<small>
+									(<a href={project.source}>source</a>)
+								</small>
+							</>
+						)}
+						<p>{project.description}</p>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<section>
+		<h2>Writing</h2>
+		<ul class="posts">
+			{
+				recentPosts.map((post) => (
+					<li>
 						<a href={`/${post.id}/`}>{post.data.title}</a>
-					</h3>
-					<small>{formatDate(post.data.date)}</small>
-				</header>
-				<p>{post.data.description || excerpt(post)}</p>
-			</article>
-		))
-	}
+						<small>{post.data.date.getUTCFullYear()}</small>
+					</li>
+				))
+			}
+		</ul>
+		<p><a href="/writing/">All posts →</a></p>
+	</section>
 </BaseLayout>
 
 <style>
-	h3 {
-		margin-top: 3.5rem;
-		margin-bottom: 0.4375rem;
+	.intro {
+		display: flex;
+		align-items: center;
+		gap: 1.25rem;
+		margin-bottom: 1rem;
 	}
-	h3 a {
-		box-shadow: none;
+	.intro img {
+		flex-shrink: 0;
+		width: 112px;
+		height: 112px;
+		margin: 0;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+	.lead {
+		margin-bottom: 0.5rem;
+	}
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin: 0;
+	}
+	h2 {
+		margin-top: 3rem;
+		margin-bottom: 1rem;
+	}
+	.projects,
+	.posts {
+		list-style: none;
+		margin-left: 0;
+	}
+	.projects li {
+		margin-bottom: 1.25rem;
+	}
+	.projects p {
+		margin: 0.25rem 0 0;
+		color: var(--text-muted);
+	}
+	.posts li {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+	.posts small {
+		color: var(--text-muted);
+		flex-shrink: 0;
+	}
+	@media (max-width: 480px) {
+		.intro {
+			flex-direction: column;
+			align-items: flex-start;
+		}
 	}
 </style>
