@@ -21,9 +21,9 @@ I am so happy I decided to go on this Coding journey and dive into web framework
 **Goal:** _Create and Release at least 2 side_ projects.  
 **Result:** This goal was to give structure to my coding goal, I didn't want to just be coding random things I wanted an end product of my coding and this helped with it. I achieved this goal and I developed and released 3+ projects.
 
-1. GOL habit Tracker - [\[Code\]](https://github.com/TheDeployGuy/LifeGameHabitTracking) [\[Website\]](https://golhabittracking.herokuapp.com/)
-2. Escape Character Helper - [\[Code\]](https://github.com/TheDeployGuy/EscapeCharactersHelper) [\[Website\]](https://escapesearch.herokuapp.com/)
-3. Zero Waste Shop Locator - [\[Code\]](https://github.com/TheDeployGuy/ZerowasteStoreFinder) [\[Website\]](https://zerowasteshops.com/)
+1. GOL habit Tracker - [\[Code\]](https://github.com/TheDeployGuy/LifeGameHabitTracking)
+2. Escape Character Helper (retired)
+3. Zero Waste Shop Locator - [\[Code\]](https://github.com/TheDeployGuy/ZerowasteStoreFinder)
 
 **Goal**: _Meet or catch-up in person with at least 40 people._  
 **Result:** I meet so many people this year, way over 40 people. That was one of the selling points for my new role, that you get to meet new people from all the projects we work on. This is a goal I will be continuing into the next year as it makes you take the effort to meet more people and you get to meet so many interesting people.
