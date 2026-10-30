@@ -26,7 +26,7 @@ I do wish I had completed more courses but at the start of this year was a bit c
 
 ## Summary
 
-In Summary, it has been a slow start to 2018 for me and I need to do some re-prioritizing with my goals and vision for the year. In particular, I need to be constantly reminded of my goals and my progress for the year. I will be tracking my achievements for the year via this [Github Repo](https://github.com/TheDeployGuy/2018_Idea_Achievement_Board). I hope you guys are having a great year.
+In Summary, it has been a slow start to 2018 for me and I need to do some re-prioritizing with my goals and vision for the year. In particular, I need to be constantly reminded of my goals and my progress for the year. I will be tracking my achievements for the year via a GitHub repo. I hope you guys are having a great year.
 
 Until next time,
 
