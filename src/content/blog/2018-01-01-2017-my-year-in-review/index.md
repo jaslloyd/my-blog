@@ -22,7 +22,7 @@ I am so happy I decided to go on this Coding journey and dive into web framework
 **Result:** This goal was to give structure to my coding goal, I didn't want to just be coding random things I wanted an end product of my coding and this helped with it. I achieved this goal and I developed and released 3+ projects.
 
 1. GOL habit Tracker - [\[Code\]](https://github.com/TheDeployGuy/LifeGameHabitTracking)
-2. Escape Character Helper
+2. Escape Character Helper (retired)
 3. Zero Waste Shop Locator - [\[Code\]](https://github.com/TheDeployGuy/ZerowasteStoreFinder)
 
 **Goal**: _Meet or catch-up in person with at least 40 people._  
